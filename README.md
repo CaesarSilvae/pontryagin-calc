@@ -29,13 +29,23 @@ Extract the zip folder in a directory you choose in your computer, but <ins>**DO
 ```graphql
 pontryagin-calc/
 │
-├── scripts/            # Sample or input data files
-├── src/                # MATLAB source code (.m files)
-├── results/            # Output figures or result files
-├── main.m              # Main script to run experiments
-├── config.m            # Parameters and configuration
-├── README.md           # Project documentation
-└── LICENSE             # License file (MIT or other)
+├── scripts/          # Folder containing .m files
+│  ├── main.m           # Main function to be executed
+│  ├── dec2sym.m        # Decimal number to symbolic text conversion
+│  ├── derivGen.m       # Total derivative generator from event terms
+│  ├── genCycPerm.m     # Cyclic permutation generator from input decimal
+│  ├── genPerm.m        # 
+│  ├── genPwrStr.m      #
+│  ├── intByParts.m     # Function to apply integration by parts
+│  ├── permSplit        #
+│  ├── rpt2pwr          #
+│  ├── saveMat          # Matrix saver
+│  └── toLog            # Log keeper
+│  
+├── matrices/         # Folder to store the generated matrices
+├── excel files/      # Folder to store the generated excel files
+├── README.md         # Project documentation
+└── LICENSE           # License file (MIT or other)
 ```
 
 To run the main script, open MATLAB and execute:
