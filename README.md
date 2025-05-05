@@ -26,6 +26,7 @@ ver
 Extract the zip folder in a directory you choose in your computer, but <ins>**DO NOT**</ins> change the hierarchy of the folders and files inside!
 
 ## 📁 Repository Structure
+```graphql
 pontryagin-calc/
 │
 ├── scripts/            # Sample or input data files
@@ -35,6 +36,7 @@ pontryagin-calc/
 ├── config.m            # Parameters and configuration
 ├── README.md           # Project documentation
 └── LICENSE             # License file (MIT or other)
+```
 
 To run the main script, open MATLAB and execute:
 ```matlab
