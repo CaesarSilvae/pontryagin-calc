@@ -10,7 +10,7 @@ This repository contains MATLAB code developed for the paper:
 This project implements 
 
 ### Requirements
-- MATLAB R2024 or later
+- MATLAB R2023b or later
 
 ### How to Run
 To run the main script, open MATLAB and execute:
