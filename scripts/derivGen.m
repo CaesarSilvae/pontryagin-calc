@@ -315,11 +315,7 @@ function [params,K] = solveEqn(params,Meven,Modd,...
     end
 
     % Find null space of Modd
-    Mred = rref(Modd');
-    freeCoeffNum = size(Modd,1) - rank(Mred);
-    K = [-Mred(1:rank(Mred),rank(Mred)+1:eqnNum); ...
-         eye(freeCoeffNum)];
-    % K = null(Modd','r');
+    K = null(Modd','r');
 
     % double check that K^T*Modd is indeed zeros
     KModd = K'*Modd;

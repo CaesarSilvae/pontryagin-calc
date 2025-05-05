@@ -11,7 +11,7 @@ params.warnings = {};
 %%%%%%%%%%%% INPUTS
 % maximum dimension (must be an even number)
 dimMin = 2;
-dimMax = 10;
+dimMax = 8;
 
 %%% folder paths 
 params.paths.matricesPath = fullfile(pwd,'..','matrices');
@@ -59,25 +59,24 @@ if ~exist(params.paths.backupPath,'dir')
     mkdir(params.paths.backupPath);
 end
 
+% get current date and time for backup folder name
+currentDateTime = ...
+    char(datetime('now', 'Format', 'ddMMyyyy_HHmmss'));
+
+% create backup folder 
+backupFolder = ...
+    fullfile(params.paths.backupPath,currentDateTime);
+mkdir(backupFolder);
+
 % create folders to store matrices, also moves
 % the existing matrices folder (if there is) to backup 
 backupMatricesPath = ...
-    fullfile(params.paths.backupPath,'matrices');
+    fullfile(backupFolder,'matrices');
 matricesPath = params.paths.matricesPath;
 if ~exist(matricesPath,'dir')
     % create matrices folder if it does not exist
     mkdir(matricesPath);
-elseif ~exist(backupMatricesPath,'dir') 
-    % move matrices folder into the backup folder 
-    movefile(matricesPath,backupMatricesPath);
-    % recreate the original folder 
-    mkdir(matricesPath);
 else
-    % first change the directory to ensure that 
-    % the rmdir does not raise an error on permissions
-    
-    % if backup folder for matrices exists, clear it
-    rmdir(backupMatricesPath,'s');
     % move matrices folder into the backup folder 
     movefile(matricesPath,backupMatricesPath);
     % recreate the original folder 
@@ -87,19 +86,12 @@ end
 % create folders to store excel files, also moves
 % the existing excel folder (if there is) to backup 
 backupExcelPath = ...
-    fullfile(params.paths.backupPath,'excel files');
+    fullfile(backupFolder,'excel files');
 excelPath = params.paths.excelPath;
 if ~exist(excelPath,'dir')
     % create matrices folder if it does not exist
     mkdir(excelPath);
-elseif ~exist(backupExcelPath,'dir') 
-    % move matrices folder into the backup folder 
-    movefile(excelPath,backupExcelPath);
-    % recreate the original folder 
-    mkdir(excelPath);
 else
-    % if backup folder for matrices exists, clear it
-    rmdir(backupExcelPath,'s');
     % move matrices folder into the backup folder 
     movefile(excelPath,backupExcelPath);
     % recreate the original folder 
