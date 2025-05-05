@@ -57,7 +57,6 @@ main.m
 - GitHub: @CaesarSilvae
 
 ## License
-This work is licensed under CC BY-SA 4.0
+This work is licensed under [CC BY-SA 4.0](LICENSE).
 
-This code is licensed under the [MIT License](LICENSE).  
 You are free to use, modify, and distribute it, provided that appropriate credit is given to the original author(s).
