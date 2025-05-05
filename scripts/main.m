@@ -73,7 +73,9 @@ elseif ~exist(backupMatricesPath,'dir')
     % recreate the original folder 
     mkdir(matricesPath);
 else
-    % first change 
+    % first change the directory to ensure that 
+    % the rmdir does not raise an error on permissions
+    
     % if backup folder for matrices exists, clear it
     rmdir(backupMatricesPath,'s');
     % move matrices folder into the backup folder 
