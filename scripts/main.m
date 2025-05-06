@@ -19,7 +19,7 @@ enableMatrixWrite = 0; % flag to enable errorenous matrix in
                        % log file (enableLog must be raised first)
 
 % miscellanous 
-txtForm = 2;       % the number of tab characters to be added
+txtForm = 1;       % the number of tab characters to be added
                    % in front of each row int log file. Choose 
                    %   - 1 for notepad   (1 tab = 8 spaces)
                    %   - 2 for notepad++ (1 tab = 4 spaces)
@@ -61,43 +61,61 @@ if ~exist(params.paths.backupPath,'dir')
     mkdir(params.paths.backupPath);
 end
 
-% get current date and time for backup folder name
-currentDateTime = ...
-    char(datetime('now', 'Format', 'ddMMyyyy_HHmmss'));
-
-% create backup folder 
-backupFolder = ...
-    fullfile(params.paths.backupPath,currentDateTime);
-mkdir(backupFolder);
+% flags to check the existence of data 
+% if there is data, move it to backup
+matrixFlag = 0;
+excelFlag = 0;
 
 % create folders to store matrices, also moves
 % the existing matrices folder (if there is) to backup 
-backupMatricesPath = ...
-    fullfile(backupFolder,'matrices');
 matricesPath = params.paths.matricesPath;
 if ~exist(matricesPath,'dir')
     % create matrices folder if it does not exist
     mkdir(matricesPath);
 else
-    % move matrices folder into the backup folder 
-    movefile(matricesPath,backupMatricesPath);
-    % recreate the original folder 
-    mkdir(matricesPath);
+    matrixFlag = 1;
 end
 
 % create folders to store excel files, also moves
 % the existing excel folder (if there is) to backup 
-backupExcelPath = ...
-    fullfile(backupFolder,'excel files');
 excelPath = params.paths.excelPath;
 if ~exist(excelPath,'dir')
     % create matrices folder if it does not exist
     mkdir(excelPath);
 else
-    % move matrices folder into the backup folder 
-    movefile(excelPath,backupExcelPath);
-    % recreate the original folder 
-    mkdir(excelPath);
+    excelFlag = 1;
+end
+
+% if there is data, create a new backup folder 
+if matrixFlag || excelFlag
+    % get current date and time for backup folder name
+    currentDateTime = ...
+        char(datetime('now', 'Format', 'ddMMyyyy_HHmmss'));
+
+    % create backup folder 
+    backupFolder = ...
+        fullfile(params.paths.backupPath,currentDateTime);
+    mkdir(backupFolder);
+
+    if matrixFlag
+        % create matrices folder under the backup folder
+        backupMatricesPath = ...
+            fullfile(backupFolder,'matrices');
+        % move matrices folder into the backup folder 
+        movefile(matricesPath,backupMatricesPath);
+        % recreate the original folder 
+        mkdir(matricesPath);
+    end
+
+    if excelFlag
+        % create excel folder under the backup folder
+        backupExcelPath = ...
+            fullfile(backupFolder,'excel_files');
+        % move matrices folder into the backup folder 
+        movefile(excelPath,backupExcelPath);
+        % recreate the original folder 
+        mkdir(excelPath);
+    end
 end
 
 % array of dimensions
