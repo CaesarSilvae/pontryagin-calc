@@ -23,7 +23,7 @@ ver
 ```
 
 ### How to Run
-- Extract the zip folder in a directory you choose in your computer, but <ins>**DO NOT**</ins> change the hierarchy of the folders and files inside!
+- Extract the zip folder in a directory of your choice in your computer, but <ins>**DO NOT**</ins> change the hierarchy of the folders and files inside!
   - If the hierarchy needs to change, paths in params.paths should be updated accordingly.
 - Adjust the input parameters:
   - <ins>dimMin:</ins> The starting dimension of the computation.
