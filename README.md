@@ -81,6 +81,7 @@ To run the main script, open MATLAB and execute:
 main.m
 ```
 
+<!--
 ## 📝 Citation
 ```bibtex
 @article{,
@@ -91,6 +92,7 @@ main.m
   doi={}
 }
 ```
+-->
 
 ## 📬 Contact
 - Onur Ayberk Çakmak – acakmak@metu.edu.tr
