@@ -52,7 +52,28 @@ The code first checks whether the folders in which the output files will be stor
 
 Any missing folder will be reproduced by the code at the beginning of the run. Upon execution, if the output data folders already exist and contain output files from previous execution, a backup subfolder is generated under the "backup" folder (See "Backup" section). 
 
-The main output of the code is "totDerivExcel.xlsx" file which contains the total derivative contributions from each permutations class and the associated coefficients for the desired dimensions. 
+The main output of the code is "totDerivExcel.xlsx" file which contains the total derivative contributions from each permutations class and the associated coefficients for the desired dimensions. The format of the file is given below for dimensions from $D=2$ to $D=8$:
+
+| $D-2$ | $\omega$   |                            |                              |                                                  |                            |
+|-------|------------|----------------------------|------------------------------|--------------------------------------------------|----------------------------|
+|       | 1          |                            |                              |                                                  |                            |
+| $D-4$ | $\omega^3$ | $(\text{d}\omega)\omega$ |                              |                                                  |                            |
+|       | 2/3        | 1                          |                              |                                                  |                            |
+| $D-6$ | $\omega^5$ | $(\text{d}\omega)\omega^3$ | $(\text{d}\omega)^2\omega$   |                                                  |                            |
+|       | 3/5        | 3/2                        | 1                            |                                                  |                            |
+| $D-8$ | $\omega^7$ | $(\text{d}\omega)\omega^7$ | $(\text{d}\omega)^2\omega^3$ | $(\text{d}\omega)\omega(\text{d}\omega)\omega^2$ | $(\text{d}\omega)^3\omega$ |
+|       | 4/7        | 2                          | 8/5                          | 4/5                                              | 1                          |
+
+Every two rows give the different total derivative term contributions and their coefficients, respectively. To read off the Chern-Simons-like potential for a given dimension, one needs to add up all the contributions in the upper row multiplied by the coefficients below them. For instance, in $D=6$ the potential term is given by the elements of the fifth row multiplied by the sixth row summed up:
+```math
+  CS_5 = \dfrac{3}{5}\omega^5 + \dfrac{3}{2}(\text{d}\omega)\omega^3 + (\text{d}\omega)^2\omega,
+```
+
+where the wedge products are suppressed. 
+
+
+
+Additionally, 
 
 ### Error Handling
 
