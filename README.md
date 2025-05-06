@@ -21,6 +21,11 @@ To check the version of your Matlab program, run
 ```matlab
 ver
 ```
+Additionally, to be able to display part of the ouput, 
+- Excel or equivalent and
+- Notepad or equivalent
+  
+are needed.
 
 ### How to Run
 - Extract the zip folder in a directory of your choice in your computer, but <ins>**DO NOT**</ins> change the hierarchy of the folders and files inside!
