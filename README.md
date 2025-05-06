@@ -35,7 +35,9 @@ ver
 - Run the "main.m" file
 
 ### Output
-The code first checks whether the folders 
+The code first checks whether the folders in which the output files will be stored exist. These folders are 
+- matrices holding the subfolders for different permutation classes ($P^{\{\bar{a},n-a\}}, a=1,\dots,n $),
+- excel files
 
 ### Error Handling
 
