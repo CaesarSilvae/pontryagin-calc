@@ -36,8 +36,10 @@ ver
 
 ### Output
 The code first checks whether the folders in which the output files will be stored exist. These folders are 
-- matrices holding the subfolders for different permutation classes ($P^{\{\bar{a},n-a\}}, a=1,\dots,n $),
-- excel files
+- "matrices", which will hold the subfolders for different permutation classes ($P^{(\bar{a},n-a)}, a=1,\dots,n $);
+  - "(a,n-a)"s, which will hold the relevant matrices for the $P^{\{\bar{a},n-a\}}, a=1,\dots,n$ permutation classes;
+- "excel files", which will hold the excel tables for the given dimension;
+- "backup", which will hold the previously generated outputs.
 
 ### Error Handling
 
