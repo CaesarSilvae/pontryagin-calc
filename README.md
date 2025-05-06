@@ -52,6 +52,8 @@ The code first checks whether the folders in which the output files will be stor
 
 Any missing folder will be reproduced by the code at the beginning of the run. Upon execution, if the output data folders already exist and contain output files from previous execution, a backup subfolder is generated under the "backup" folder (See "Backup" section). 
 
+The main output of the code is "totDerivExcel.xlsx" file which contains the total derivative contributions from each permutations class and the associated coefficients for the desired dimensions. 
+
 ### Error Handling
 
 ### Backup
