@@ -58,7 +58,14 @@ pontryagin-calc/
 │  └── toLog.m          # Log keeper
 │  
 ├── matrices/         # Folder to store the generated matrices
-│  ├── D-2
+│  ├── D-2              # Folder containing subfolders corresponding to D=2
+│  │  └── 1-0             # Folder containing matrices of P^(1,0) permutation class
+│  ├── D-4              # Folder containing matrices corresponding to D=4
+│  │  ├── 2-0             # Folder containing matrices of P^(2,0) permutation class
+│  │  └── 1-1             # Folder containing matrices of P^(1,1) permutation class
+│  │
+│  └── ...
+│
 ├── excel files/      # Folder to store the generated excel files
 ├── README.md         # Project documentation
 └── LICENSE           # License file (MIT or other)
