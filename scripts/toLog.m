@@ -13,7 +13,7 @@ function toLog(params,logCode,logVar)
     dateStr = char(datetime("now"),'dd/MM/yyyy');
 
     % check log enabling flag
-    enableLog = params.flags.enablaLog;
+    enableLog = params.flags.enableLog;
     if enableLog == 0
         return;
     end

@@ -8,34 +8,36 @@ params.flags = struct();
 params.misc = struct();
 params.warnings = {};
 
-%%%%%%%%%%%% INPUTS
+%% INPUTS
 % maximum dimension (must be an even number)
 dimMin = 2;
-dimMax = 32;
+dimMax = 34;
 
+% global flags 
+enableLog = 1;         % flag to enable log keeping
+enableMatrixWrite = 0; % flag to enable errorenous matrix in
+                       % log file (enableLog must be raised first)
+
+% miscellanous 
+txtForm = 2;       % the number of tab characters to be added
+                   % in front of each row int log file. Choose 
+                   %   - 1 for notepad   (1 tab = 8 spaces)
+                   %   - 2 for notepad++ (1 tab = 4 spaces)
+tolerance = 1e-10; % tolerance below which matrix elements are
+                   % set as 0
+
+%% CODE
 %%% folder paths 
 params.paths.matricesPath = fullfile(pwd,'..','matrices');
 params.paths.excelPath = fullfile(pwd,'..','excel files');
 params.paths.logPath = fullfile(pwd,'..','log.txt');
 params.paths.backupPath = fullfile(pwd,'..','backup');
 
-%%% global flags 
-% flag to enable log keeping 
-params.flags.enablaLog = 1;
-% flag to enable errorenous matrix in
-% log file (enableLog must be raised first)
-params.flags.enableMatrixWrite = 0;
-
-%%% miscellanous 
-% the number of tab characters to be added
-% in front of each row int log file. Choose 
-%   - 1 for notepad   (1 tab = 8 spaces)
-%   - 2 for notepad++ (1 tab = 4 spaces)
-params.misc.txtForm = 2;
-% tolerance below which matrix elements are
-% set as 0
-params.misc.tolerance = 1e-10;
-%%%%%%%%%%%%
+% assign inputs 
+params.flags.enableLog = enableLog;
+params.flags.enableMatrixWrite = enableMatrixWrite;
+params.misc.txtForm = txtForm;
+params.misc.tolerance = tolerance;
 
 % n = D/2
 nMax = dimMax/2;
