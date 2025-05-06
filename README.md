@@ -81,16 +81,18 @@ To run the main script, open MATLAB and execute:
 main.m
 ```
 
+<!--
 ## 📝 Citation
 ```bibtex
 @article{,
   title={Chern-Simons potentials of higher-dimensional Pontryagin densities},
-  author={Çakmak, Onur Ayberk and Sarıoğlu, Bahtiyar Özgür},  
+  author={Çakmak, Onur Ayberk and Sarıoğlu, Özgür},  
   journal={},
   year={2025},
   doi={}
 }
 ```
+-->
 
 ## 📬 Contact
 - Onur Ayberk Çakmak – acakmak@metu.edu.tr
