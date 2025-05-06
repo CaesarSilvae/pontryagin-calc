@@ -38,7 +38,7 @@ ver
 The code first checks whether the folders in which the output files will be stored exist. These folders are 
 - "matrices", which will hold the subfolders for different permutation classes ($P^{(\bar{a},n-a)}, a=1,\dots,n $);
   - "(a,n-a)"s, which will hold the relevant matrices for the $P^{(\bar{a},n-a)}, a=1,\dots,n$ permutation classes;
-- "excel files", which will hold the excel tables for the given dimension;
+- "excel_files", which will hold the excel tables for the given dimension;
 - "backup", which will hold the previously generated outputs.
 
 Any missing folder will be reproduced by the code at the beginning of the run. Upon execution, if the output data folders already exist and contain output files from previous execution, a backup subfolder is generated under the "backup" folder (See "Backup" section). 
@@ -46,7 +46,7 @@ Any missing folder will be reproduced by the code at the beginning of the run. U
 ### Error Handling
 
 ### Backup
-
+The 
 
 ## 📁 Repository Structure
 ```graphql
