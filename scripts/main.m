@@ -29,7 +29,7 @@ tolerance = 1e-10; % tolerance below which matrix elements are
 %% CODE
 %%% folder paths 
 params.paths.matricesPath = fullfile(pwd,'..','matrices');
-params.paths.excelPath = fullfile(pwd,'..','excel files');
+params.paths.excelPath = fullfile(pwd,'..','excel_files');
 params.paths.logPath = fullfile(pwd,'..','log.txt');
 params.paths.backupPath = fullfile(pwd,'..','backup');
 
