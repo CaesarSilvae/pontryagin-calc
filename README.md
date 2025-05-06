@@ -35,6 +35,7 @@ ver
 - Run the "main.m" file
 
 ### Output
+The code first checks whether the folders 
 
 ### Error Handling
 
