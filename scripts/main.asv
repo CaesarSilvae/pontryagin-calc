@@ -11,7 +11,7 @@ params.warnings = {};
 %%%%%%%%%%%% INPUTS
 % maximum dimension (must be an even number)
 dimMin = 2;
-dimMax = 16;
+dimMax = 32;
 
 %%% folder paths 
 params.paths.matricesPath = fullfile(pwd,'..','matrices');
@@ -65,14 +65,13 @@ currentDateTime = ...
 
 % create backup folder 
 backupFolder = ...
-    [params.paths.backupPath currentDateTime];
-mkdir(params.paths.backupPath)
+    fullfile(params.paths.backupPath,currentDateTime);
+mkdir(backupFolder);
 
 % create folders to store matrices, also moves
 % the existing matrices folder (if there is) to backup 
 backupMatricesPath = ...
-    fullfile(params.paths.backupPath,...
-    ['matrices-' char(currentDateTime)]);
+    fullfile(backupFolder,'matrices');
 matricesPath = params.paths.matricesPath;
 if ~exist(matricesPath,'dir')
     % create matrices folder if it does not exist
@@ -87,8 +86,7 @@ end
 % create folders to store excel files, also moves
 % the existing excel folder (if there is) to backup 
 backupExcelPath = ...
-    fullfile(params.paths.backupPath,...
-    ['excel files-' char(currentDateTime)]);
+    fullfile(backupFolder,'excel files');
 excelPath = params.paths.excelPath;
 if ~exist(excelPath,'dir')
     % create matrices folder if it does not exist

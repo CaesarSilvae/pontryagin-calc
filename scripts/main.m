@@ -11,7 +11,7 @@ params.warnings = {};
 %%%%%%%%%%%% INPUTS
 % maximum dimension (must be an even number)
 dimMin = 2;
-dimMax = 8;
+dimMax = 32;
 
 %%% folder paths 
 params.paths.matricesPath = fullfile(pwd,'..','matrices');

@@ -1,194 +1,37 @@
-05/05/2025, 19:02:22 ===============================================================================
+06/05/2025, 01:56:01 ===============================================================================
 
-05/05/2025, 19:02:59 ===============================================================================
-
-		19:02:59 : Calculation of D-2 started!
-		19:02:59 : Calculation of D-2 is complete in 0.30931!
-		19:02:59 : Calculation of D-4 started!
-		19:03:00 : Calculation of D-4 is complete in 0.24902!
-		19:03:00 : Calculation of D-6 started!
-		19:03:00 : Calculation of D-6 is complete in 0.14075!
-		19:03:00 : Calculation of D-8 started!
-		19:03:00 : Calculation of D-8 is complete in 0.2153!
-		19:03:00 : Calculation of D-10 started!
-		19:03:00 : Calculation of D-10 is complete in 0.24127!
-
-====================================================================================================
-
-05/05/2025, 19:03:06 ===============================================================================
-
-		19:03:06 : Calculation of D-2 started!
-		19:03:07 : Calculation of D-2 is complete in 0.2804!
-		19:03:07 : Calculation of D-4 started!
-		19:03:07 : Calculation of D-4 is complete in 0.24679!
-		19:03:07 : Calculation of D-6 started!
-		19:03:07 : Calculation of D-6 is complete in 0.15861!
-		19:03:07 : Calculation of D-8 started!
-		19:03:07 : Calculation of D-8 is complete in 0.20987!
-		19:03:07 : Calculation of D-10 started!
-		19:03:07 : Calculation of D-10 is complete in 0.24841!
-		19:03:07 : Calculation of D-12 started!
-		19:03:08 : Calculation of D-12 is complete in 0.32663!
-		19:03:08 : Calculation of D-14 started!
-		19:03:08 : Calculation of D-14 is complete in 0.41918!
-
-====================================================================================================
-
-05/05/2025, 19:03:27 ===============================================================================
-
-05/05/2025, 19:05:08 ===============================================================================
-
-		19:05:13 : Calculation of D-2 started!
-		19:05:13 : Calculation of D-2 is complete in 0.33208!
-		19:05:13 : Calculation of D-4 started!
-		19:05:14 : Calculation of D-4 is complete in 0.21909!
-		19:05:14 : Calculation of D-6 started!
-		19:05:14 : Calculation of D-6 is complete in 0.16274!
-
-====================================================================================================
-
-05/05/2025, 19:05:18 ===============================================================================
-
-05/05/2025, 19:08:20 ===============================================================================
-
-05/05/2025, 19:08:30 ===============================================================================
-
-05/05/2025, 19:39:26 ===============================================================================
-
-05/05/2025, 19:39:40 ===============================================================================
-
-05/05/2025, 19:40:31 ===============================================================================
-
-		19:40:32 : Calculation of D-2 started!
-		19:40:32 : Calculation of D-2 is complete in 0.33457!
-		19:40:32 : Calculation of D-4 started!
-		19:40:32 : Calculation of D-4 is complete in 0.22786!
-		19:40:32 : Calculation of D-6 started!
-		19:40:32 : Calculation of D-6 is complete in 0.16809!
-
-====================================================================================================
-
-05/05/2025, 19:41:02 ===============================================================================
-
-		19:41:03 : Calculation of D-2 started!
-		19:41:03 : Calculation of D-2 is complete in 0.31628!
-		19:41:03 : Calculation of D-4 started!
-		19:41:03 : Calculation of D-4 is complete in 0.21541!
-		19:41:03 : Calculation of D-6 started!
-		19:41:03 : Calculation of D-6 is complete in 0.13863!
-		19:41:03 : Calculation of D-8 started!
-		19:41:04 : Calculation of D-8 is complete in 0.20895!
-		19:41:04 : Calculation of D-10 started!
-		19:41:04 : Calculation of D-10 is complete in 0.23822!
-		19:41:04 : Calculation of D-12 started!
-		19:41:04 : Calculation of D-12 is complete in 0.37935!
-
-====================================================================================================
-
-05/05/2025, 19:41:11 ===============================================================================
-
-		19:41:11 : Calculation of D-2 started!
-		19:41:11 : Calculation of D-2 is complete in 0.31576!
-		19:41:11 : Calculation of D-4 started!
-		19:41:11 : Calculation of D-4 is complete in 0.24557!
-		19:41:11 : Calculation of D-6 started!
-		19:41:11 : Calculation of D-6 is complete in 0.14138!
-		19:41:11 : Calculation of D-8 started!
-		19:41:12 : Calculation of D-8 is complete in 0.23973!
-		19:41:12 : Calculation of D-10 started!
-		19:41:12 : Calculation of D-10 is complete in 0.24977!
-		19:41:12 : Calculation of D-12 started!
-		19:41:12 : Calculation of D-12 is complete in 0.35545!
-		19:41:12 : Calculation of D-14 started!
-		19:41:13 : Calculation of D-14 is complete in 0.35674!
-		19:41:13 : Calculation of D-16 started!
- ERROR! 19:41:13 : Odd terms do not  vanish!
-			D-16, # of (dw)'s: 4
- ERROR! 19:41:13 : Odd terms do not  vanish!
-			D-16, # of (dw)'s: 5
- ERROR! 19:41:13 : Odd terms do not  vanish!
-			D-16, # of (dw)'s: 6
-		19:41:13 : Calculation of D-16 is complete in 0.63494!
-
-====================================================================================================
-
-05/05/2025, 19:45:58 ===============================================================================
-
-		19:45:58 : Calculation of D-2 started!
-		19:45:58 : Calculation of D-2 is complete in 0.32202!
-		19:45:58 : Calculation of D-4 started!
-		19:45:58 : Calculation of D-4 is complete in 0.22806!
-		19:45:58 : Calculation of D-6 started!
-		19:45:59 : Calculation of D-6 is complete in 0.14425!
-		19:45:59 : Calculation of D-8 started!
-		19:45:59 : Calculation of D-8 is complete in 0.22904!
-		19:45:59 : Calculation of D-10 started!
-		19:45:59 : Calculation of D-10 is complete in 0.2479!
-		19:45:59 : Calculation of D-12 started!
-		19:45:59 : Calculation of D-12 is complete in 0.34608!
-		19:45:59 : Calculation of D-14 started!
-		19:46:00 : Calculation of D-14 is complete in 0.4153!
-		19:46:00 : Calculation of D-16 started!
-		19:46:01 : Calculation of D-16 is complete in 0.67739!
-
-====================================================================================================
-
-05/05/2025, 19:48:52 ===============================================================================
-
-05/05/2025, 19:50:03 ===============================================================================
-
-05/05/2025, 19:51:50 ===============================================================================
-
-05/05/2025, 19:54:47 ===============================================================================
-
-05/05/2025, 19:54:56 ===============================================================================
-
-		19:55:00 : Calculation of D-2 started!
-		19:55:01 : Calculation of D-2 is complete in 0.35412!
-		19:55:01 : Calculation of D-4 started!
-		19:55:01 : Calculation of D-4 is complete in 0.24786!
-		19:55:01 : Calculation of D-6 started!
-		19:55:01 : Calculation of D-6 is complete in 0.15821!
-		19:55:01 : Calculation of D-8 started!
-		19:55:01 : Calculation of D-8 is complete in 0.24253!
-		19:55:01 : Calculation of D-10 started!
-		19:55:02 : Calculation of D-10 is complete in 0.2879!
-		19:55:02 : Calculation of D-12 started!
-		19:55:02 : Calculation of D-12 is complete in 0.4056!
-		19:55:02 : Calculation of D-14 started!
-		19:55:02 : Calculation of D-14 is complete in 0.42655!
-		19:55:02 : Calculation of D-16 started!
-		19:55:03 : Calculation of D-16 is complete in 0.79447!
-
-====================================================================================================
-
-05/05/2025, 19:55:37 ===============================================================================
-
-		19:55:37 : Calculation of D-2 started!
-		19:55:37 : Calculation of D-2 is complete in 0.29243!
-		19:55:37 : Calculation of D-4 started!
-		19:55:38 : Calculation of D-4 is complete in 0.22671!
-		19:55:38 : Calculation of D-6 started!
-		19:55:38 : Calculation of D-6 is complete in 0.15201!
-		19:55:38 : Calculation of D-8 started!
-		19:55:38 : Calculation of D-8 is complete in 0.22474!
-		19:55:38 : Calculation of D-10 started!
-		19:55:38 : Calculation of D-10 is complete in 0.27392!
-		19:55:38 : Calculation of D-12 started!
-		19:55:39 : Calculation of D-12 is complete in 0.35381!
-
-====================================================================================================
-
-05/05/2025, 19:56:27 ===============================================================================
-
-		19:56:27 : Calculation of D-2 started!
-		19:56:28 : Calculation of D-2 is complete in 0.2895!
-		19:56:28 : Calculation of D-4 started!
-		19:56:28 : Calculation of D-4 is complete in 0.24044!
-		19:56:28 : Calculation of D-6 started!
-		19:56:28 : Calculation of D-6 is complete in 0.14068!
-		19:56:28 : Calculation of D-8 started!
-		19:56:28 : Calculation of D-8 is complete in 0.2355!
+		01:56:02 : Calculation of D-2 started!
+		01:56:02 : Calculation of D-2 is complete in 0.36767!
+		01:56:02 : Calculation of D-4 started!
+		01:56:02 : Calculation of D-4 is complete in 0.21739!
+		01:56:02 : Calculation of D-6 started!
+		01:56:02 : Calculation of D-6 is complete in 0.13875!
+		01:56:02 : Calculation of D-8 started!
+		01:56:02 : Calculation of D-8 is complete in 0.20329!
+		01:56:02 : Calculation of D-10 started!
+		01:56:03 : Calculation of D-10 is complete in 0.22417!
+		01:56:03 : Calculation of D-12 started!
+		01:56:03 : Calculation of D-12 is complete in 0.34019!
+		01:56:03 : Calculation of D-14 started!
+		01:56:03 : Calculation of D-14 is complete in 0.39878!
+		01:56:03 : Calculation of D-16 started!
+		01:56:04 : Calculation of D-16 is complete in 0.74455!
+		01:56:04 : Calculation of D-18 started!
+		01:56:05 : Calculation of D-18 is complete in 0.92826!
+		01:56:05 : Calculation of D-20 started!
+		01:56:07 : Calculation of D-20 is complete in 2.0271!
+		01:56:07 : Calculation of D-22 started!
+		01:56:12 : Calculation of D-22 is complete in 4.8816!
+		01:56:12 : Calculation of D-24 started!
+		01:56:28 : Calculation of D-24 is complete in 15.5154!
+		01:56:28 : Calculation of D-26 started!
+		01:57:16 : Calculation of D-26 is complete in 48.6651!
+		01:57:16 : Calculation of D-28 started!
+		02:00:36 : Calculation of D-28 is complete in 200.0934!
+		02:00:36 : Calculation of D-30 started!
+		02:17:42 : Calculation of D-30 is complete in 1025.2484!
+		02:17:42 : Calculation of D-32 started!
+		04:14:13 : Calculation of D-32 is complete in 6991.2269!
 
 ====================================================================================================
 
