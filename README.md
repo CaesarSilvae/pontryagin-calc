@@ -21,11 +21,17 @@ To check the version of your Matlab program, run
 ```matlab
 ver
 ```
+Additionally, to be able to display part of the ouput, 
+- Excel or equivalent and
+- Notepad or equivalent
+  
+are needed.
 
 ### How to Run
 - Extract the zip folder in a directory of your choice in your computer, but <ins>**DO NOT**</ins> change the hierarchy of the folders and files inside!
   - If the hierarchy needs to change, paths in params.paths should be updated accordingly.
 - Adjust the input parameters:
+  - <ins>mainPath:</ins> The path to the "pontryagin-calc" repo.
   - <ins>dimMin:</ins> The starting dimension of the computation.
   - <ins>dimMax:</ins> The ending dimension of the computation.
   - <ins>enableLog:</ins> Set as 1 to enable log keeping, set as 0 otherwise.
@@ -46,11 +52,45 @@ The code first checks whether the folders in which the output files will be stor
 
 Any missing folder will be reproduced by the code at the beginning of the run. Upon execution, if the output data folders already exist and contain output files from previous execution, a backup subfolder is generated under the "backup" folder (See "Backup" section). 
 
+The main output of the code is "totDerivExcel.xlsx" file which contains the total derivative contributions from each permutations class and the associated coefficients for the desired dimensions. The format of the file is given below for dimensions from $D=2$ to $D=8$:
+
+| $D-2$ | $\omega$   |                            |                              |                                                  |                            |
+|-------|------------|----------------------------|------------------------------|--------------------------------------------------|----------------------------|
+|       | 1          |                            |                              |                                                  |                            |
+| $D-4$ | $\omega^3$ | $(\text{d}\omega)\omega$ |                              |                                                  |                            |
+|       | 2/3        | 1                          |                              |                                                  |                            |
+| $D-6$ | $\omega^5$ | $(\text{d}\omega)\omega^3$ | $(\text{d}\omega)^2\omega$   |                                                  |                            |
+|       | 3/5        | 3/2                        | 1                            |                                                  |                            |
+| $D-8$ | $\omega^7$ | $(\text{d}\omega)\omega^7$ | $(\text{d}\omega)^2\omega^3$ | $(\text{d}\omega)\omega(\text{d}\omega)\omega^2$ | $(\text{d}\omega)^3\omega$ |
+|       | 4/7        | 2                          | 8/5                          | 4/5                                              | 1                          |
+
+Every two rows give the different total derivative term contributions and their coefficients, respectively. To read off the Chern-Simons-like potential for a given dimension, one needs to add up all the contributions in the upper row multiplied by the coefficients below them. For instance, in $D=6$ the potential term is given by the elements of the fifth row multiplied by the sixth row summed up:
+```math
+  CS_5 = \dfrac{3}{5}\omega^5 + \dfrac{3}{2}(\text{d}\omega)\omega^3 + (\text{d}\omega)^2\omega,
+```
+
+where the wedge products are suppressed. 
+
+
+
+Additionally, 
+
 ### Error Handling
 
 ### Backup
-The generated backup subfolder is named depending on the date and time of its generation in the format 
-> "DDMMYYYY_HHMMSS"
+Each time there is data in either the "matrices" or in the "excel_files" folder, a new backup subfolder is generated under the "backup" folder. The generated backup subfolder is named depending on the date and time of the execution starting time of the previous data (<ins>**NOT**</ins> the date and time of the current execution) in the format 
+> "DDMMYYYY_HHMMSS".
+
+Then the folders containing data are moved into this newly generated subfolder:
+```graphql
+└── backup/
+│  ├── ...
+│  └── DDMMYYYY_HHMMSS/
+│  │  ├── matrices/
+│  │  └── excel_files/
+```
+
+In place of moved folders (if any), empty new ones are created in the main path.
 
 ## 📁 Repository Structure
 ```graphql
@@ -70,15 +110,15 @@ pontryagin-calc/
 │  └── toLog.m          # Log keeper
 │  
 ├── matrices/         # Folder to store the generated matrices
-│  ├── D-2              # Folder containing subfolders corresponding to D=2
-│  │  └── 1-0             # Folder containing matrices of P^(1,0) permutation class
-│  ├── D-4              # Folder containing matrices corresponding to D=4
-│  │  ├── 2-0             # Folder containing matrices of P^(2,0) permutation class
-│  │  └── 1-1             # Folder containing matrices of P^(1,1) permutation class
+│  ├── D-2/             # Folder containing subfolders corresponding to D=2
+│  │  └── 1-0/            # Folder containing matrices of P^(1,0) permutation class
+│  ├── D-4/             # Folder containing matrices corresponding to D=4
+│  │  ├── 2-0/            # Folder containing matrices of P^(2,0) permutation class
+│  │  └── 1-1/            # Folder containing matrices of P^(1,1) permutation class
 │  │
 │  └── ...
 │
-├── excel files/      # Folder to store the generated excel files
+├── excel_files/      # Folder to store the generated excel files
 ├── README.md         # Project documentation
 └── LICENSE           # License file (MIT or other)
 ```
