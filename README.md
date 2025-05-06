@@ -57,8 +57,18 @@ The main output of the code is "totDerivExcel.xlsx" file which contains the tota
 ### Error Handling
 
 ### Backup
-The generated backup subfolder is named depending on the date and time of its generation in the format 
-> "DDMMYYYY_HHMMSS"
+Each time there is data in either the "matrices" or in the "excel_files" folder, a new backup subfolder is generated under the "backup" folder. The generated backup subfolder is named depending on the date and time of the execution starting time of the previous data (<ins>**NOT**</ins> the date and time of the current execution) in the format 
+> "DDMMYYYY_HHMMSS".
+
+Then the folders containing data are moved into this newly generated subfolder:
+```graphql
+└── backup/
+│  ├── ...
+│  └── DDMMYYYY_HHMMSS/
+│  │  ├── matrices/
+│  │  └── excel_files/
+```
+.
 
 ## 📁 Repository Structure
 ```graphql
@@ -78,15 +88,15 @@ pontryagin-calc/
 │  └── toLog.m          # Log keeper
 │  
 ├── matrices/         # Folder to store the generated matrices
-│  ├── D-2              # Folder containing subfolders corresponding to D=2
-│  │  └── 1-0             # Folder containing matrices of P^(1,0) permutation class
-│  ├── D-4              # Folder containing matrices corresponding to D=4
-│  │  ├── 2-0             # Folder containing matrices of P^(2,0) permutation class
-│  │  └── 1-1             # Folder containing matrices of P^(1,1) permutation class
+│  ├── D-2/             # Folder containing subfolders corresponding to D=2
+│  │  └── 1-0/            # Folder containing matrices of P^(1,0) permutation class
+│  ├── D-4/             # Folder containing matrices corresponding to D=4
+│  │  ├── 2-0/            # Folder containing matrices of P^(2,0) permutation class
+│  │  └── 1-1/            # Folder containing matrices of P^(1,1) permutation class
 │  │
 │  └── ...
 │
-├── excel files/      # Folder to store the generated excel files
+├── excel_files/      # Folder to store the generated excel files
 ├── README.md         # Project documentation
 └── LICENSE           # License file (MIT or other)
 ```
