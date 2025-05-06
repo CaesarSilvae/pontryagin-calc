@@ -17,7 +17,7 @@ dimMin = 2;
 dimMax = 32;
 
 % global flags 
-enableLog = 1;         % flag to enable log keeping
+enableLog = 0;         % flag to enable log keeping
 enableMatrixWrite = 0; % flag to enable errorenous matrix in
                        % log file (enableLog must be raised first)
 
@@ -178,7 +178,7 @@ for dim = dimArr
     for dwNum = 1:n
         % subsubfolder path
         dwPath = fullfile(dimPath, ...
-            [num2str(dwNum) '-' num2str(n-dwNum)]);
+            ['(' num2str(dwNum) '-' num2str(n-dwNum) ')']);
         
         % create if non-existent
         if ~exist(dwPath,'dir')
