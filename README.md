@@ -85,7 +85,7 @@ main.m
 ```bibtex
 @article{,
   title={Chern-Simons potentials of higher-dimensional Pontryagin densities},
-  author={Çakmak, Onur Ayberk and Sarıoğlu, Bahtiyar Özgür},  
+  author={Çakmak, Onur Ayberk and Sarıoğlu, Özgür},  
   journal={},
   year={2025},
   doi={}
