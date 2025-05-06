@@ -42,9 +42,11 @@ The code first checks whether the folders in which the output files will be stor
 - "backup", which will hold the previously generated outputs.
 
 Any missing folder will be reproduced by the code at the beginning of the run. Upon execution, if the output data folders already exist and contain output files from previous execution, a backup subfolder is generated under the "backup" folder (See "Backup" section). 
+
 ### Error Handling
 
 ### Backup
+
 
 ## 📁 Repository Structure
 ```graphql
