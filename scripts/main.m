@@ -9,6 +9,9 @@ params.misc = struct();
 params.warnings = {};
 
 %% INPUTS
+% path to pontryagin-calc folder (must be added manually)
+mainPath = "C:\Users\aybrk\Dropbox\pontryagin-calc";
+
 % maximum dimension (must be an even number)
 dimMin = 2;
 dimMax = 32;
@@ -28,10 +31,11 @@ tolerance = 1e-10; % tolerance below which matrix elements are
 
 %% CODE
 %%% folder paths 
-params.paths.matricesPath = fullfile(pwd,'..','matrices');
-params.paths.excelPath = fullfile(pwd,'..','excel_files');
-params.paths.logPath = fullfile(pwd,'..','log.txt');
-params.paths.backupPath = fullfile(pwd,'..','backup');
+params.paths.mainPath = mainPath; % path to the main repo
+params.paths.matricesPath = fullfile(mainPath,'matrices');
+params.paths.excelPath = fullfile(mainPath,'excel_files');
+params.paths.logPath = fullfile(mainPath,'log.txt');
+params.paths.backupPath = fullfile(mainPath,'backup');
 
 % assign inputs 
 params.flags.enableLog = enableLog;
@@ -53,6 +57,10 @@ if dimMax < dimMin
     error('dimMax should not be less than dimMin!')
 end
 
+% get current date and time for storing the starting
+% time 
+currentDateTime = datetime('now');
+
 % write to log file 
 toLog(params,-3);
 
@@ -72,8 +80,15 @@ matricesPath = params.paths.matricesPath;
 if ~exist(matricesPath,'dir')
     % create matrices folder if it does not exist
     mkdir(matricesPath);
-else
-    matrixFlag = 1;
+else 
+    % check whether the matrices folder is empty 
+    contents = dir(matricesPath);
+    contents = contents(~ismember({contents.name}, ...
+        {'.', '..'}));
+    % raise flag if folder is not empty
+    if ~isempty(contents)
+        matrixFlag = 1;
+    end
 end
 
 % create folders to store excel files, also moves
@@ -82,21 +97,32 @@ excelPath = params.paths.excelPath;
 if ~exist(excelPath,'dir')
     % create matrices folder if it does not exist
     mkdir(excelPath);
-else
-    excelFlag = 1;
+elseif ~isempty(excelPath)
+    % check whether the excel folder is empty 
+    contents = dir(excelPath);
+    contents = contents(~ismember({contents.name}, ...
+        {'.', '..'}));
+    % raise flag if folder is not empty
+    if ~isempty(contents)
+        excelFlag = 1;
+    end
 end
 
 % if there is data, create a new backup folder 
 if matrixFlag || excelFlag
-    % get current date and time for backup folder name
-    currentDateTime = ...
-        char(datetime('now', 'Format', 'ddMMyyyy_HHmmss'));
+    % load date-time info of the previous execution
+    prevDateTime = load(...
+        fullfile(params.paths.mainPath,'startTime.mat'));
+    prevDateTime = prevDateTime.currentDateTime;
+    prevDateTime.Format = 'ddMMyyyy_HHmmss';
+    prevDateTime = char(prevDateTime);
 
-    % create backup folder 
+    % create backup folder for the previous data
     backupFolder = ...
-        fullfile(params.paths.backupPath,currentDateTime);
+        fullfile(params.paths.backupPath,prevDateTime);
     mkdir(backupFolder);
 
+    % move previous matrices folder in the backup folder
     if matrixFlag
         % create matrices folder under the backup folder
         backupMatricesPath = ...
@@ -107,6 +133,7 @@ if matrixFlag || excelFlag
         mkdir(matricesPath);
     end
 
+    % move previous excel folder in the backup folder
     if excelFlag
         % create excel folder under the backup folder
         backupExcelPath = ...
@@ -118,8 +145,20 @@ if matrixFlag || excelFlag
     end
 end
 
+% delete previous date-time info 
+if exist(fullfile(params.paths.mainPath,"startTime.mat"),"file")
+    delete(fullfile(params.paths.mainPath,"startTime.mat"));
+end
+
+% create date-time info for the current session
+save(fullfile(params.paths.mainPath,'startTime.mat'), ...
+    "currentDateTime");
+
 % array of dimensions
 dimArr = dimMin:2:dimMax;
+
+% clear unused variables
+clearvars -except params nMax dimArr dimMin dimMax
 
 % create subfolders of different dimensions
 for dim = dimArr
