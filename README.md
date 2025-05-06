@@ -7,7 +7,7 @@ P_{2n} = R^{i_1}_{i_2}\wedge R^{i_2}_{i_3}\wedge \dots \wedge R^{i_{2n-1}}_{i_{2
 presented in the paper:
 
 > **Title:** *Chern-Simons potentials of higher-dimensional Pontryagin densities*<br>
-> **Authors:** Onur Ayberk Çakmak, Bahtiyar Özgür Sarıoğlu<br>
+> **Authors:** Onur Ayberk Çakmak, Özgür Sarıoğlu<br>
 > **arXiv:** [](https://arxiv.org/)
 
 ## Overview
@@ -15,7 +15,7 @@ presented in the paper:
 
 ## 🛠 Requirements
 This code was developed and tested using:
-- **MATLAB** R2023b or lateer
+- **MATLAB** R2023b or later
   
 To check the version of your Matlab program, run
 ```matlab
@@ -23,7 +23,7 @@ ver
 ```
 
 ### How to Run
-- Extract the zip folder in a directory you choose in your computer, but <ins>**DO NOT**</ins> change the hierarchy of the folders and files inside!
+- Extract the zip folder in a directory of your choice in your computer, but <ins>**DO NOT**</ins> change the hierarchy of the folders and files inside!
   - If the hierarchy needs to change, paths in params.paths should be updated accordingly.
 - Adjust the input parameters:
   - <ins>dimMin:</ins> The starting dimension of the computation.
@@ -35,6 +35,11 @@ ver
 - Run the "main.m" file
 
 ### Output
+The code first checks whether the folders in which the output files will be stored exist. These folders are 
+- "matrices", which will hold the subfolders for different permutation classes ($P^{(\bar{a},n-a)}, a=1,\dots,n $);
+  - "(a,n-a)"s, which will hold the relevant matrices for the $P^{\{\bar{a},n-a\}}, a=1,\dots,n$ permutation classes;
+- "excel files", which will hold the excel tables for the given dimension;
+- "backup", which will hold the previously generated outputs.
 
 ### Error Handling
 
