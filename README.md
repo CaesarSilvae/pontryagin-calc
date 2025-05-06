@@ -23,7 +23,16 @@ ver
 ```
 
 ### How to Run
-Extract the zip folder in a directory you choose in your computer, but <ins>**DO NOT**</ins> change the hierarchy of the folders and files inside!
+- Extract the zip folder in a directory you choose in your computer, but <ins>**DO NOT**</ins> change the hierarchy of the folders and files inside!
+  - If the hierarchy needs to change, paths in params.paths should be updated accordingly.
+- Adjust the input parameters:
+  - <ins>dimMin:</ins> The starting dimension of the computation.
+  - <ins>dimMax:</ins> The ending dimension of the computation.
+  - <ins>enableLog:</ins> Set as 1 to enable log keeping, set as 0 otherwise.
+  - <ins>enableMatrixWrite:</ins> Set as 1 to enable erroneous matrices to be written in the log                                   file, set as 0 otherwise. "enablaLog" flag must be raised.
+  - <ins>txtForm:</ins> This variable is for adjusting the formatting of the log file. Set as 1                         if the log file is to be displayed in notepad, set as 2 for notepad++.
+  - <ins>tolerance:</ins> Tolerance value below which a variable is considered as 0.
+- Run the "main.m" file  
 
 ## 📁 Repository Structure
 ```graphql
@@ -34,13 +43,13 @@ pontryagin-calc/
 │  ├── dec2sym.m        # Decimal number to symbolic text conversion
 │  ├── derivGen.m       # Total derivative generator from event terms
 │  ├── genCycPerm.m     # Cyclic permutation generator from input decimal
-│  ├── genPerm.m        # 
-│  ├── genPwrStr.m      #
+│  ├── genPerm.m        # Unique cyclic permutation generator in D-dimension
+│  ├── genPwrStr.m      # Function to convert decimal to superscript text
 │  ├── intByParts.m     # Function to apply integration by parts
-│  ├── permSplit        #
-│  ├── rpt2pwr          #
-│  ├── saveMat          # Matrix saver
-│  └── toLog            # Log keeper
+│  ├── permSplit.m      # Function to find consecutive binary digit repetitions
+│  ├── rpt2pwr.m        # Function to convert repeated number to number raised to power
+│  ├── saveMat.m        # Matrix saver
+│  └── toLog.m          # Log keeper
 │  
 ├── matrices/         # Folder to store the generated matrices
 ├── excel files/      # Folder to store the generated excel files
