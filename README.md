@@ -68,7 +68,8 @@ Then the folders containing data are moved into this newly generated subfolder:
 │  │  ├── matrices/
 │  │  └── excel_files/
 ```
-.
+
+In place of moved folders (if any), empty new ones are created in the main path.
 
 ## 📁 Repository Structure
 ```graphql
