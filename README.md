@@ -32,7 +32,10 @@ ver
   - <ins>enableMatrixWrite:</ins> Set as 1 to enable erroneous matrices to be written in the log                                   file, set as 0 otherwise. "enablaLog" flag must be raised.
   - <ins>txtForm:</ins> This variable is for adjusting the formatting of the log file. Set as 1                         if the log file is to be displayed in notepad, set as 2 for notepad++.
   - <ins>tolerance:</ins> Tolerance value below which a variable is considered as 0.
-- Run the "main.m" file
+- Run the "main.m" file:
+```matlab
+main.m
+```
 
 ### Output
 The code first checks whether the folders in which the output files will be stored exist. These folders are 
@@ -46,7 +49,8 @@ Any missing folder will be reproduced by the code at the beginning of the run. U
 ### Error Handling
 
 ### Backup
-The 
+The generated backup subfolder is named depending on the date and time of its generation in the format 
+> "DDMMYYYY_HHMMSS"
 
 ## 📁 Repository Structure
 ```graphql
@@ -77,11 +81,6 @@ pontryagin-calc/
 ├── excel files/      # Folder to store the generated excel files
 ├── README.md         # Project documentation
 └── LICENSE           # License file (MIT or other)
-```
-
-To run the main script, open MATLAB and execute:
-```matlab
-main.m
 ```
 
 <!--
