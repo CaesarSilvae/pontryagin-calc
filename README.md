@@ -32,7 +32,13 @@ ver
   - <ins>enableMatrixWrite:</ins> Set as 1 to enable erroneous matrices to be written in the log                                   file, set as 0 otherwise. "enablaLog" flag must be raised.
   - <ins>txtForm:</ins> This variable is for adjusting the formatting of the log file. Set as 1                         if the log file is to be displayed in notepad, set as 2 for notepad++.
   - <ins>tolerance:</ins> Tolerance value below which a variable is considered as 0.
-- Run the "main.m" file  
+- Run the "main.m" file
+
+### Output
+
+### Error Handling
+
+### Backup
 
 ## 📁 Repository Structure
 ```graphql
@@ -52,6 +58,7 @@ pontryagin-calc/
 │  └── toLog.m          # Log keeper
 │  
 ├── matrices/         # Folder to store the generated matrices
+│  ├── D-2
 ├── excel files/      # Folder to store the generated excel files
 ├── README.md         # Project documentation
 └── LICENSE           # License file (MIT or other)
