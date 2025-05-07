@@ -51,12 +51,11 @@ pontryagin-calc/
 - Extract the zip folder in a directory of your choice in your computer, but <ins>**DO NOT**</ins> change the hierarchy of the folders and files inside!
   - If the hierarchy needs to change, paths in params.paths should be updated accordingly.
 - Adjust the input parameters in the "main.m" file:
-  - <ins>mainPath:</ins> The path to the "pontryagin-calc" repo.
   - <ins>dimMin:</ins> The starting dimension of the computation.
   - <ins>dimMax:</ins> The ending dimension of the computation.
   - <ins>enableLog:</ins> Set as 1 to enable log keeping, set as 0 otherwise.
-  - <ins>enableMatrixWrite:</ins> Set as 1 to enable erroneous matrices to be written in the log                                   file, set as 0 otherwise. "enablaLog" flag must be raised.
-  - <ins>txtForm:</ins> This variable is for adjusting the formatting of the log file. Set as 1                         if the log file is to be displayed in notepad, set as 2 for notepad++.
+  - <ins>enableMatrixWrite:</ins> Set as 1 to enable erroneous matrices to be written in the log file, set as 0 otherwise. "enablaLog" flag must be raised.
+  - <ins>txtForm:</ins> This variable is for adjusting the formatting of the log file. Set as 1 if the log file is to be displayed in notepad, set as 2 for notepad++.
   - <ins>tolerance:</ins> Tolerance value below which a variable is considered as 0.
 - Run the "main.m" file:
 ```matlab
