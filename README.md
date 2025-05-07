@@ -41,11 +41,14 @@ pontryagin-calc/
 │    ├── saveMat.m        # Matrix saver
 │    └── toLog.m          # Log keeper
 ├── data_D2to32.zip   # Zip folder containing data generated for D=2 to D=32 dimension
-├── matrices/         # Folder to store the generated matrices
-├── excel_files/      # Folder to store the generated excel files
+├── backup/*          # Folder to store the previously generated outputs
+├── matrices/*        # Folder to store the generated matrices
+├── excel_files/*     # Folder to store the generated excel files
 ├── README.md         # Project documentation
 └── LICENSE           # License file (MIT or other)
 ```
+
+The folders with asterisk are generated at runtime. 
 
 ## Overview
 ### How to Run
