@@ -10,7 +10,16 @@ presented in the paper:
 > **Authors:** Onur Ayberk Çakmak, Özgür Sarıoğlu<br>
 > **arXiv:** [](https://arxiv.org/)
 
-## 🛠 Requirements
+## Table of Contents
+
+- [Requirements](#Requirements)
+- [Repository Structure](#Repository-Structure)
+- [Overview](#Overview)
+- [How to Run](#How-to-Run)
+- [License](#license)
+
+
+## Requirements
 This code was developed and tested using:
 - **MATLAB** R2023b or later
   
@@ -24,7 +33,7 @@ Additionally, to be able to display part of the ouput,
   
 are needed.
 
-## 📁 Repository Structure
+## Repository Structure
 ```graphql
 pontryagin-calc/
 ├── main.m            # Main file to be executed
@@ -171,7 +180,11 @@ Then the folders containing data are moved into this newly generated subfolder:
            └── excel_files/
 ```
 
-In place of moved folders (if any), empty new ones are created in the main path.
+In place of moved folders (if any), new empty ones are created in the main path.
+
+### Function Call Graph
+
+![Screenshot](./images/diagram.png)
 
 <!-- UNCOMMENT LATER!!!
 ## 📝 Citation
