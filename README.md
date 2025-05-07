@@ -27,29 +27,20 @@ are needed.
 ## 📁 Repository Structure
 ```graphql
 pontryagin-calc/
-│
-├── scripts/          # Folder containing .m files
-│  ├── main.m           # Main function to be executed
-│  ├── dec2sym.m        # Decimal number to symbolic text conversion
-│  ├── derivGen.m       # Total derivative generator from event terms
-│  ├── genCycPerm.m     # Cyclic permutation generator from input decimal
-│  ├── genPerm.m        # Unique cyclic permutation generator in D-dimension
-│  ├── genPwrStr.m      # Function to convert decimal to superscript text
-│  ├── intByParts.m     # Function to apply integration by parts
-│  ├── permSplit.m      # Function to find consecutive binary digit repetitions
-│  ├── rpt2pwr.m        # Function to convert repeated number to number raised to power
-│  ├── saveMat.m        # Matrix saver
-│  └── toLog.m          # Log keeper
-│  
+├── main.m            # Main file to be executed
+├── images/           # Folder containing sample images
+├── src/              # Source folder containing .m files
+│    ├── dec2sym.m        # Decimal number to symbolic text conversion
+│    ├── derivGen.m       # Total derivative generator from event terms
+│    ├── genCycPerm.m     # Cyclic permutation generator from input decimal
+│    ├── genPerm.m        # Unique cyclic permutation generator in D-dimension
+│    ├── genPwrStr.m      # Function to convert decimal to superscript text
+│    ├── intByParts.m     # Function to apply integration by parts
+│    ├── permSplit.m      # Function to find consecutive binary digit repetitions
+│    ├── rpt2pwr.m        # Function to convert repeated number to number raised to power
+│    ├── saveMat.m        # Matrix saver
+│    └── toLog.m          # Log keeper
 ├── matrices/         # Folder to store the generated matrices
-│  ├── D-2/             # Folder containing subfolders corresponding to D=2
-│  │  └── 1-0/            # Folder containing matrices of P^(1,0) permutation class
-│  ├── D-4/             # Folder containing matrices corresponding to D=4
-│  │  ├── 2-0/            # Folder containing matrices of P^(2,0) permutation class
-│  │  └── 1-1/            # Folder containing matrices of P^(1,1) permutation class
-│  │
-│  └── ...
-│
 ├── excel_files/      # Folder to store the generated excel files
 ├── README.md         # Project documentation
 └── LICENSE           # License file (MIT or other)
