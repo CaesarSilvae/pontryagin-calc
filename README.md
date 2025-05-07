@@ -24,6 +24,37 @@ Additionally, to be able to display part of the ouput,
   
 are needed.
 
+## 📁 Repository Structure
+```graphql
+pontryagin-calc/
+│
+├── scripts/          # Folder containing .m files
+│  ├── main.m           # Main function to be executed
+│  ├── dec2sym.m        # Decimal number to symbolic text conversion
+│  ├── derivGen.m       # Total derivative generator from event terms
+│  ├── genCycPerm.m     # Cyclic permutation generator from input decimal
+│  ├── genPerm.m        # Unique cyclic permutation generator in D-dimension
+│  ├── genPwrStr.m      # Function to convert decimal to superscript text
+│  ├── intByParts.m     # Function to apply integration by parts
+│  ├── permSplit.m      # Function to find consecutive binary digit repetitions
+│  ├── rpt2pwr.m        # Function to convert repeated number to number raised to power
+│  ├── saveMat.m        # Matrix saver
+│  └── toLog.m          # Log keeper
+│  
+├── matrices/         # Folder to store the generated matrices
+│  ├── D-2/             # Folder containing subfolders corresponding to D=2
+│  │  └── 1-0/            # Folder containing matrices of P^(1,0) permutation class
+│  ├── D-4/             # Folder containing matrices corresponding to D=4
+│  │  ├── 2-0/            # Folder containing matrices of P^(2,0) permutation class
+│  │  └── 1-1/            # Folder containing matrices of P^(1,1) permutation class
+│  │
+│  └── ...
+│
+├── excel_files/      # Folder to store the generated excel files
+├── README.md         # Project documentation
+└── LICENSE           # License file (MIT or other)
+```
+
 ## Overview
 ### How to Run
 - Extract the zip folder in a directory of your choice in your computer, but <ins>**DO NOT**</ins> change the hierarchy of the folders and files inside!
@@ -74,7 +105,7 @@ Additionally, in the matrices folder a subfolder for each dimension from "dimMin
 (a)-(n-a),
 ```
 
-where $a=1,\dots,n$ and $n=D/2$, $D$ being the corresponding dimension. The matrices calculated during the computation of total derivative contribution from each permutation class (see equation (3.4) and (3.6) from our paper) are stored in the folder for the associated permutation class. The mentioned matrices are
+where $a=1,\dots,n$ and $n=D/2$, $D$ being the corresponding dimension. The matrices calculated during the computation of total derivative contribution from each permutation class (see equation (3.4) and (3.6) from our paper) are stored in the folder for the associated permutation class. These matrices are ".mat" files which can be viewed in MATLAB. The mentioned matrices are
 - $M^{(\bar{a},n-a)}_\text{even}$,
 - $M^{(\bar{a},n-a)}_\text{odd}$,
 - $u^{(\bar{a},n-a)}_\text{even}$,
@@ -99,6 +130,8 @@ During the execution of the code, left null space $K$ of the matrix $M_\text{odd
 
 The calculation is conducted using the MATLAB built-in function "null". As a second verification step, the code explicitly computes the multiplication $K*M_\text{odd}$ using the computed $K$ and checks whether the result indeed vanishes or not. If the multiplication does not vanish, "Odd terms do not vanish!" error is added to the warning stack. The matrices mentioned at the end of the "Output" section are saved with "-ERRORENOUS" extension in their names:
 
+![Screenshot](./images/erroneous_matrix.png)
+
 The potential errors that are handled by the code include 
 - Non-vanishing of the $M_\text{odd}$ matrix containing the coefficients of the odd terms.
 
@@ -120,37 +153,6 @@ Then the folders containing data are moved into this newly generated subfolder:
 ```
 
 In place of moved folders (if any), empty new ones are created in the main path.
-
-## 📁 Repository Structure
-```graphql
-pontryagin-calc/
-│
-├── scripts/          # Folder containing .m files
-│  ├── main.m           # Main function to be executed
-│  ├── dec2sym.m        # Decimal number to symbolic text conversion
-│  ├── derivGen.m       # Total derivative generator from event terms
-│  ├── genCycPerm.m     # Cyclic permutation generator from input decimal
-│  ├── genPerm.m        # Unique cyclic permutation generator in D-dimension
-│  ├── genPwrStr.m      # Function to convert decimal to superscript text
-│  ├── intByParts.m     # Function to apply integration by parts
-│  ├── permSplit.m      # Function to find consecutive binary digit repetitions
-│  ├── rpt2pwr.m        # Function to convert repeated number to number raised to power
-│  ├── saveMat.m        # Matrix saver
-│  └── toLog.m          # Log keeper
-│  
-├── matrices/         # Folder to store the generated matrices
-│  ├── D-2/             # Folder containing subfolders corresponding to D=2
-│  │  └── 1-0/            # Folder containing matrices of P^(1,0) permutation class
-│  ├── D-4/             # Folder containing matrices corresponding to D=4
-│  │  ├── 2-0/            # Folder containing matrices of P^(2,0) permutation class
-│  │  └── 1-1/            # Folder containing matrices of P^(1,1) permutation class
-│  │
-│  └── ...
-│
-├── excel_files/      # Folder to store the generated excel files
-├── README.md         # Project documentation
-└── LICENSE           # License file (MIT or other)
-```
 
 <!-- UNCOMMENT LATER!!!
 ## 📝 Citation
