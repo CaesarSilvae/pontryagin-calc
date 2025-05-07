@@ -90,9 +90,21 @@ Finally, a time stamp file "startTime.m" file is generated at the beginning of t
 
 ### Error Handling
 
-Several error handling procedures are implemented in our program.
+Several error-handling procedures are implemented within our program. These procedures are not executed through separate functions; rather, they are embedded directly within the scripts. If the encountered error does not affect the execution of the remaining code, it is handled locally without interrupting the overall process. The error warnings are stacked for each dimension and displayed at the end of the computation for that dimension.
 
->⚠️ **Warning:** Although most of the possible errors that might appear during the computation are handled by the code, system-level errors (insufficient memory, no permission to read/write folders, etc.) are not. These kind of errors are handled by the Matlab itself.
+During the execution of the code, left null space $K$ of the matrix $M_\text{odd}$, which contains the coefficients of the odd terms, is calculated (see equation (3.6) of our paper)
+```math
+  K*M_\text{odd} = 0.
+```
+
+The calculation is conducted using the MATLAB built-in function "null". As a second verification step, the code explicitly computes the multiplication $K*M_\text{odd}$ using the computed $K$ and checks whether the result indeed vanishes or not. If the multiplication does not vanish, "Odd terms do not vanish!" error is added to the warning stack. The matrices mentioned at the end of the "Output" section are saved with "-ERRORENOUS" extension in their names:
+
+The potential errors that are handled by the code include 
+- Non-vanishing of the $M_\text{odd}$ matrix containing the coefficients of the odd terms.
+
+>⚠️ **Warning:** Although most of the possible errors that might appear during the computation are handled by the code, system-level errors (insufficient memory, no permission to read/write folders, etc.) are not. These kind of errors are handled by the Matlab built-in error handling functions.
+>
+>⚠️ **Warning:** We were able to execute our code up to dimension $D=32$, in $D=34$ we have faced with "insufficient memory" error as the number of total derivative terms increase drastically.
 
 ### Backup
 Each time there is data in either the "matrices" or in the "excel_files" folder, a new backup subfolder is generated under the "backup" folder. The generated backup subfolder is named depending on the date and time of the execution starting time of the previous data (<ins>**NOT**</ins> the date and time of the current execution) in the format 
