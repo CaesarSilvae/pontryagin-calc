@@ -322,13 +322,13 @@ function [params,K] = solveEqn(params,Meven,Modd,...
     KModd(KModd<tol) = 0; % set numbers below tol 0
     if ~isequal(KModd,zeros(size(KModd)))
         % write to log
-        toLog(params,-1,'Odd terms do not  vanish!');
+        toLog(params,-1,'Odd terms do not vanish!');
         toLog(params,1,{'Modd',Modd,'K',K});
         toLog(params,1,['D-' num2str(dim) ... 
             ', # of (dw)''s: ' num2str(partialNum)]);
 
         % add to warning list 
-        wrn = ['Odd terms do not  vanish! (' ...
+        wrn = ['Odd terms do not vanish! (' ...
             num2str(partialNum) ',' num2str(dim/2-partialNum) ')'];
         params.warnings{end+1} = wrn;
 
