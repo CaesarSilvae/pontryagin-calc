@@ -112,7 +112,7 @@ where $a=1,\dots,n$ and $n=D/2$, $D$ being the corresponding dimension. The matr
 - $u^{(\bar{a},n-a)}_\text{d}$,
 - $u^{(\bar{a},n-a)}_\text{odd}$.
 
-At the end of each of these matrices' names a text is attached to indicate $a$ and $n-a$. 
+At the end of each of these matrices' names a text is attached to indicate the total number of $\text{d}\omega$ pieces in the permutation $a$ and $n-a$. 
 An example output for $P^{(\bar{3},2)}$ in $D=10$ is given below 
 
 ![Screenshot](./images/perm_class_folder.png)
@@ -135,7 +135,10 @@ The calculation is conducted using the MATLAB built-in function "null". As a sec
 The execution of the code then continues with the next permutation class. Additionally, we expect the multiplication $K\times M_\text{even}\times u_\text{even}$ to yield the contribution of the corresponding permutation class to the Pontryagin density (see equation (3.7) in our paper). In the case where the multiplication does not yield the desired output, "K*M_even$ did not yield Pontryagin!" error is added to the warning stack. Again, the corresponding matrices are saved with "-ERRONEOUS" at the end of their names.
 
 When the computation for a given dimension is complete, the error warnings are displayed as 
+
 ![Screenshot](./images/warnings.png)
+
+The dimension $D$, where the error occurs is shown in the upper-left and at the end of each error message the number of $\text{d}\omega$ pieces $a$ is indicated in the format $(a,D/2-a)$.
 
 >⚠️ **Warning:** Although most of the possible errors that might appear during the computation are handled by the code, system-level errors (insufficient memory, no permission to read/write folders, etc.) are not. These kind of errors are handled by the Matlab built-in error handling functions.
 >
