@@ -8,15 +8,17 @@
 % {'a',[...],'b',[...],...}
 function toLog(params,logCode,logVar)
 
+    % get log enabling flag
+    enableLog = params.flags.enableLog;
+
+    % if enable log flag is not raised, exit the program
+    if ~enableLog
+        return;
+    end
+
     % get time 
     timeStr = char(datetime("now"),'HH:mm:ss');
     dateStr = char(datetime("now"),'dd/MM/yyyy');
-
-    % check log enabling flag
-    enableLog = params.flags.enableLog;
-    if enableLog == 0
-        return;
-    end
 
     % the number of tab characters to be added
     % in front of each row. Choose 
@@ -33,13 +35,9 @@ function toLog(params,logCode,logVar)
         end
     end
 
-    % check for log file, generate if it does not exist
+    % if enable log flag is raised, open file
     logPath = params.paths.logPath;
     fileID = fopen(logPath,'a');
-
-    if fileID == -1
-        error('Failed to create the log file!')
-    end
 
     % generate text to be written
     switch logCode
@@ -52,6 +50,7 @@ function toLog(params,logCode,logVar)
         case 0
             dispMsg = [repmat('\t',1,txtForm) timeStr ' : ' logVar '\n'];
         otherwise
+
             if txtFlag
                 dispMsg = [repmat('\t',1,logCode+txtForm) logVar '\n'];
             elseif params.flags.enableMatrixWrite

@@ -9,15 +9,12 @@ params.misc = struct();
 params.warnings = {};
 
 %% INPUTS
-% path to pontryagin-calc folder (must be added manually)
-mainPath = "C:\Users\aybrk\Dropbox\pontryagin-calc";
-
 % maximum dimension (must be an even number)
 dimMin = 2;
 dimMax = 32;
 
 % global flags 
-enableLog = 0;         % flag to enable log keeping
+enableLog = 1;         % flag to enable log keeping
 enableMatrixWrite = 0; % flag to enable errorenous matrix in
                        % log file (enableLog must be raised first)
 
@@ -30,12 +27,18 @@ tolerance = 1e-10; % tolerance below which matrix elements are
                    % set as 0
 
 %% CODE
+% path to the main file and repo folder
+doc = matlab.desktop.editor.getActive;
+mainPath = doc.Filename;
+[mainPath,~,~] = fileparts(mainPath);
+[repoPath,~,~] = fileparts(mainPath);
+
 %%% folder paths 
-params.paths.mainPath = mainPath; % path to the main repo
-params.paths.matricesPath = fullfile(mainPath,'matrices');
-params.paths.excelPath = fullfile(mainPath,'excel_files');
-params.paths.logPath = fullfile(mainPath,'log.txt');
-params.paths.backupPath = fullfile(mainPath,'backup');
+params.paths.repoPath = repoPath; % path to the main repo
+params.paths.matricesPath = fullfile(repoPath,'matrices');
+params.paths.excelPath = fullfile(repoPath,'excel_files');
+params.paths.logPath = fullfile(repoPath,'log.txt');
+params.paths.backupPath = fullfile(repoPath,'backup');
 
 % assign inputs 
 params.flags.enableLog = enableLog;
@@ -60,6 +63,13 @@ end
 % get current date and time for storing the starting
 % time 
 currentDateTime = datetime('now');
+
+% check for log file, generate if it does not exist
+logPath = params.paths.logPath;
+if ~exist(logPath,"file") && params.flags.enableLog
+    fid = fopen(logPath, 'w'); 
+    fclose(fid);
+end
 
 % write to log file 
 toLog(params,-3);
@@ -112,7 +122,7 @@ end
 if matrixFlag || excelFlag
     % load date-time info of the previous execution
     prevDateTime = load(...
-        fullfile(params.paths.mainPath,'startTime.mat'));
+        fullfile(params.paths.repoPath,'startTime.mat'));
     prevDateTime = prevDateTime.currentDateTime;
     prevDateTime.Format = 'ddMMyyyy_HHmmss';
     prevDateTime = char(prevDateTime);
@@ -146,12 +156,12 @@ if matrixFlag || excelFlag
 end
 
 % delete previous date-time info 
-if exist(fullfile(params.paths.mainPath,"startTime.mat"),"file")
-    delete(fullfile(params.paths.mainPath,"startTime.mat"));
+if exist(fullfile(params.paths.repoPath,"startTime.mat"),"file")
+    delete(fullfile(params.paths.repoPath,"startTime.mat"));
 end
 
 % create date-time info for the current session
-save(fullfile(params.paths.mainPath,'startTime.mat'), ...
+save(fullfile(params.paths.repoPath,'startTime.mat'), ...
     "currentDateTime");
 
 % array of dimensions
@@ -178,7 +188,7 @@ for dim = dimArr
     for dwNum = 1:n
         % subsubfolder path
         dwPath = fullfile(dimPath, ...
-            ['(' num2str(dwNum) '-' num2str(n-dwNum) ')']);
+            [num2str(dwNum) '-' num2str(n-dwNum)]);
         
         % create if non-existent
         if ~exist(dwPath,'dir')

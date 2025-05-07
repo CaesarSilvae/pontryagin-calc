@@ -13,8 +13,8 @@ function saveMat(params,dim,partialNum,matList,errorFlag)
 
     % path to folder 
     dimName = ['D-' num2str(dim)];
-    dwName = ['(' num2str(partialNum) '-' ...
-        num2str(dim/2-partialNum) ')'];
+    dwName = [num2str(partialNum) '-' ...
+        num2str(dim/2-partialNum)];
     fileExt = ['_' dwName];
     folderPath = fullfile(params.paths.matricesPath,...
         dimName,dwName);
