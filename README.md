@@ -30,7 +30,7 @@ are needed.
 ### How to Run
 - Extract the zip folder in a directory of your choice in your computer, but <ins>**DO NOT**</ins> change the hierarchy of the folders and files inside!
   - If the hierarchy needs to change, paths in params.paths should be updated accordingly.
-- Adjust the input parameters:
+- Adjust the input parameters in the "main.m" file:
   - <ins>mainPath:</ins> The path to the "pontryagin-calc" repo.
   - <ins>dimMin:</ins> The starting dimension of the computation.
   - <ins>dimMax:</ins> The ending dimension of the computation.
@@ -85,7 +85,12 @@ where $a=1,\dots,n$ and $n=D/2$, $D$ being the corresponding dimension. The matr
 - $u^{(\bar{a},n-a)}_\text{d}$,
 - $u^{(\bar{a},n-a)}_\text{odd}$.
 
-At the end of each of these matrices' names a text is attached to indicate $a$ and $n-a$. For instance $M^{(\bar{4},2)}_\text{even}$ would be stored under the folder "4-2" as "Meven_4-2".
+At the end of each of these matrices' names a text is attached to indicate $a$ and $n-a$. 
+An example output for $P^{(\bar{3},2)}$ in $D=10$ is given below 
+
+![Screenshot](./images/perm_class_folder.png)
+
+Finally, a time stamp file "startTime.m" file is generated at the beginning of the run. This file, however, is not for the user but instead used by the code during the next execution for the backup folder name.
 
 ### Error Handling
 
