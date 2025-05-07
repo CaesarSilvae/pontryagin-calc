@@ -73,7 +73,19 @@ where the wedge products are suppressed.
 
 
 
-Additionally, 
+Additionally, in the matrices folder a subfolder for each dimension from "dimMin" up to "dimMax" are created. In each such subfolder separate subsubfolders are generated for each permutation class (classes of different number of $\text{d}\omega$ pieces) with the name format 
+```math
+(a)-(n-a),
+```
+
+where $a=1,\dots,n$ and $n=D/2$, $D$ being the corresponding dimension. The matrices calculated during the computation of total derivative contribution from each permutation class (see equation (3.4) and (3.6) from our paper) are stored in the folder for the associated permutation class. The mentioned matrices are
+- $M^{(\bar{a},n-a)}_\text{even}$,
+- $M^{(\bar{a},n-a)}_\text{odd}$,
+- $u^{(\bar{a},n-a)}_\text{even}$,
+- $u^{(\bar{a},n-a)}_\text{d}$,
+- $u^{(\bar{a},n-a)}_\text{odd}$.
+
+At the end of each of these matrices' names a text is attached to indicate $a$ and $n-a$. For instance $M^{(\bar{4},2)}_\text{even}$ would be stored under the folder "4-2" as "Meven_4-2".
 
 ### Error Handling
 
@@ -123,7 +135,7 @@ pontryagin-calc/
 └── LICENSE           # License file (MIT or other)
 ```
 
-<!--
+<!-- UNCOMMENT LATER!!!
 ## 📝 Citation
 ```bibtex
 @article{,
