@@ -10,9 +10,6 @@ presented in the paper:
 > **Authors:** Onur Ayberk Çakmak, Özgür Sarıoğlu<br>
 > **arXiv:** [](https://arxiv.org/)
 
-## Overview
-
-
 ## 🛠 Requirements
 This code was developed and tested using:
 - **MATLAB** R2023b or later
@@ -27,6 +24,7 @@ Additionally, to be able to display part of the ouput,
   
 are needed.
 
+## Overview
 ### How to Run
 - Extract the zip folder in a directory of your choice in your computer, but <ins>**DO NOT**</ins> change the hierarchy of the folders and files inside!
   - If the hierarchy needs to change, paths in params.paths should be updated accordingly.
@@ -52,7 +50,7 @@ The code first checks whether the folders in which the output files will be stor
 
 Any missing folder will be reproduced by the code at the beginning of the run. Upon execution, if the output data folders already exist and contain output files from previous execution, a backup subfolder is generated under the "backup" folder (See "Backup" section). 
 
-The main output of the code is "totDerivExcel.xlsx" file which contains the total derivative contributions from each permutations class and the associated coefficients for the desired dimensions. The format of the file is given below for dimensions from $D=2$ to $D=8$:
+The main output of the code is "totDerivExcel.xlsx" file which contains the total derivative contributions from each permutations class and the associated coefficients for the desired dimensions as a table. The format of the file is given below for dimensions from $D=2$ to $D=8$:
 
 | $D-2$ | $\omega$   |                            |                              |                                                  |                            |
 |-------|------------|----------------------------|------------------------------|--------------------------------------------------|----------------------------|
@@ -70,8 +68,6 @@ Every two rows give the different total derivative term contributions and their 
 ```
 
 where the wedge products are suppressed. 
-
-
 
 Additionally, in the matrices folder a subfolder for each dimension from "dimMin" up to "dimMax" are created. In each such subfolder separate subsubfolders are generated for each permutation class (classes of different number of $\text{d}\omega$ pieces) with the name format 
 ```math
@@ -93,6 +89,10 @@ An example output for $P^{(\bar{3},2)}$ in $D=10$ is given below
 Finally, a time stamp file "startTime.m" file is generated at the beginning of the run. This file, however, is not for the user but instead used by the code during the next execution for the backup folder name.
 
 ### Error Handling
+
+Several error handling procedures are implemented in our program.
+
+>⚠️ **Warning:** Although most of the possible errors that might appear during the computation are handled by the code, system-level errors (insufficient memory, no permission to read/write folders, etc.) are not. These kind of errors are handled by the Matlab itself.
 
 ### Backup
 Each time there is data in either the "matrices" or in the "excel_files" folder, a new backup subfolder is generated under the "backup" folder. The generated backup subfolder is named depending on the date and time of the execution starting time of the previous data (<ins>**NOT**</ins> the date and time of the current execution) in the format 
