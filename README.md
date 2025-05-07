@@ -40,6 +40,7 @@ pontryagin-calc/
 │    ├── rpt2pwr.m        # Function to convert repeated number to number raised to power
 │    ├── saveMat.m        # Matrix saver
 │    └── toLog.m          # Log keeper
+├── data_D2to32.zip   # Zip folder containing data generated for D=2 to D=32 dimension
 ├── matrices/         # Folder to store the generated matrices
 ├── excel_files/      # Folder to store the generated excel files
 ├── README.md         # Project documentation
