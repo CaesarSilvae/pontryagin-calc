@@ -21,7 +21,7 @@ presented in the paper:
   - [Backup](#Backup)
   - [Function Call Graph](#Function-Call-Graph)
 - [Contact](#Contact)
-- [License](#Lisence)
+- [License](#License)
 
 ## Requirements
 This code was developed and tested using:
@@ -203,7 +203,7 @@ In place of moved folders (if any), new empty ones are created in the main path.
 ```
 -->
 
-## 📬 Contact
+## Contact
 - Onur Ayberk Çakmak – acakmak@metu.edu.tr
 - GitHub: @CaesarSilvae
 
