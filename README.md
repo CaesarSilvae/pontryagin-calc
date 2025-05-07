@@ -10,9 +10,6 @@ presented in the paper:
 > **Authors:** Onur Ayberk Çakmak, Özgür Sarıoğlu<br>
 > **arXiv:** [](https://arxiv.org/)
 
-## Overview
-
-
 ## 🛠 Requirements
 This code was developed and tested using:
 - **MATLAB** R2023b or later
@@ -27,10 +24,11 @@ Additionally, to be able to display part of the ouput,
   
 are needed.
 
+## Overview
 ### How to Run
 - Extract the zip folder in a directory of your choice in your computer, but <ins>**DO NOT**</ins> change the hierarchy of the folders and files inside!
   - If the hierarchy needs to change, paths in params.paths should be updated accordingly.
-- Adjust the input parameters:
+- Adjust the input parameters in the "main.m" file:
   - <ins>mainPath:</ins> The path to the "pontryagin-calc" repo.
   - <ins>dimMin:</ins> The starting dimension of the computation.
   - <ins>dimMax:</ins> The ending dimension of the computation.
@@ -52,7 +50,7 @@ The code first checks whether the folders in which the output files will be stor
 
 Any missing folder will be reproduced by the code at the beginning of the run. Upon execution, if the output data folders already exist and contain output files from previous execution, a backup subfolder is generated under the "backup" folder (See "Backup" section). 
 
-The main output of the code is "totDerivExcel.xlsx" file which contains the total derivative contributions from each permutations class and the associated coefficients for the desired dimensions. The format of the file is given below for dimensions from $D=2$ to $D=8$:
+The main output of the code is "totDerivExcel.xlsx" file which contains the total derivative contributions from each permutations class and the associated coefficients for the desired dimensions as a table. The format of the file is given below for dimensions from $D=2$ to $D=8$:
 
 | $D-2$ | $\omega$   |                            |                              |                                                  |                            |
 |-------|------------|----------------------------|------------------------------|--------------------------------------------------|----------------------------|
@@ -71,8 +69,6 @@ Every two rows give the different total derivative term contributions and their 
 
 where the wedge products are suppressed. 
 
-
-
 Additionally, in the matrices folder a subfolder for each dimension from "dimMin" up to "dimMax" are created. In each such subfolder separate subsubfolders are generated for each permutation class (classes of different number of $\text{d}\omega$ pieces) with the name format 
 ```math
 (a)-(n-a),
@@ -85,9 +81,30 @@ where $a=1,\dots,n$ and $n=D/2$, $D$ being the corresponding dimension. The matr
 - $u^{(\bar{a},n-a)}_\text{d}$,
 - $u^{(\bar{a},n-a)}_\text{odd}$.
 
-At the end of each of these matrices' names a text is attached to indicate $a$ and $n-a$. For instance $M^{(\bar{4},2)}_\text{even}$ would be stored under the folder "4-2" as "Meven_4-2".
+At the end of each of these matrices' names a text is attached to indicate $a$ and $n-a$. 
+An example output for $P^{(\bar{3},2)}$ in $D=10$ is given below 
+
+![Screenshot](./images/perm_class_folder.png)
+
+Finally, a time stamp file "startTime.m" file is generated at the beginning of the run. This file, however, is not for the user but instead used by the code during the next execution for the backup folder name.
 
 ### Error Handling
+
+Several error-handling procedures are implemented within our program. These procedures are not executed through separate functions; rather, they are embedded directly within the scripts. If the encountered error does not affect the execution of the remaining code, it is handled locally without interrupting the overall process. The error warnings are stacked for each dimension and displayed at the end of the computation for that dimension.
+
+During the execution of the code, left null space $K$ of the matrix $M_\text{odd}$, which contains the coefficients of the odd terms, is calculated (see equation (3.6) of our paper)
+```math
+  K*M_\text{odd} = 0.
+```
+
+The calculation is conducted using the MATLAB built-in function "null". As a second verification step, the code explicitly computes the multiplication $K*M_\text{odd}$ using the computed $K$ and checks whether the result indeed vanishes or not. If the multiplication does not vanish, "Odd terms do not vanish!" error is added to the warning stack. The matrices mentioned at the end of the "Output" section are saved with "-ERRORENOUS" extension in their names:
+
+The potential errors that are handled by the code include 
+- Non-vanishing of the $M_\text{odd}$ matrix containing the coefficients of the odd terms.
+
+>⚠️ **Warning:** Although most of the possible errors that might appear during the computation are handled by the code, system-level errors (insufficient memory, no permission to read/write folders, etc.) are not. These kind of errors are handled by the Matlab built-in error handling functions.
+>
+>⚠️ **Warning:** We were able to execute our code up to dimension $D=32$, in $D=34$ we have faced with "insufficient memory" error as the number of total derivative terms increase drastically.
 
 ### Backup
 Each time there is data in either the "matrices" or in the "excel_files" folder, a new backup subfolder is generated under the "backup" folder. The generated backup subfolder is named depending on the date and time of the execution starting time of the previous data (<ins>**NOT**</ins> the date and time of the current execution) in the format 
