@@ -92,20 +92,23 @@ Every two rows give the different total derivative term contributions and their 
   CS_5 = \dfrac{3}{5}\omega^5 + \dfrac{3}{2}(\text{d}\omega)\omega^3 + (\text{d}\omega)^2\omega,
 ```
 
-where the wedge products are suppressed. Another excel file containing the coefficients of the even terms coming from the expansion of the Pontryagin density is created. The format of this file (for $D=2$ to $D=12$) is as follows:
+where the wedge products are suppressed. Another excel file named "coeffExcel.xlsx", containing the coefficients of the even terms coming from the expansion of the Pontryagin density is created. The format of this file (for $D=2$ to $D=12$) is as follows:
 
-| Dimension | (dω)⁰ | (dω)¹ | (dω)²   | (dω)³   | (dω)⁴     | (dω)⁵     | (dω)⁶   | (dω)⁷   | (dω)⁸ |
-|-----------|-------|-------|---------|---------|-----------|-----------|---------|---------|-------|
-| 2-D       | 1     | 1     |         |         |           |           |         |         |       |
-| 4-D       | 1     | 2     | 1       |         |           |           |         |         |       |
-| 6-D       | 1     | 3     | 3       | 1       |           |           |         |         |       |
-| 8-D       | 1     | 4     | 4 2     | 4       | 1         |           |         |         |       |
-| 10-D      | 1     | 5     | 5²      | 5²      | 5         | 1         |         |         |       |
-| 12-D      | 1     | 6     | 6² 3    | 6³ 2    | 6² 3      | 6         | 1       |         |       |
-| 14-D      | 1     | 7     | 7³      | 7⁵      | 7⁵        | 7³        | 7       | 1       |       |
-| 16-D      | 1     | 8     | 8³ 4    | 8⁷      | 8⁸ 4 2    | 8⁷        | 8³ 4    | 8       | 1     |
+| Dimension | (dω)⁰ | (dω)¹ | (dω)²   | (dω)³   | (dω)⁴     | (dω)⁵     | (dω)⁶   |
+|-----------|-------|-------|---------|---------|-----------|-----------|---------|
+| 2-D       | 1     | 1     |         |         |           |           |         |       
+| 4-D       | 1     | 2     | 1       |         |           |           |         |       
+| 6-D       | 1     | 3     | 3       | 1       |           |           |         |        
+| 8-D       | 1     | 4     | 4 2     | 4       | 1         |           |         |         
+| 10-D      | 1     | 5     | 5²      | 5²      | 5         | 1         |         |         
+| 12-D      | 1     | 6     | 6² 3    | 6³ 2    | 6² 3      | 6         | 1       |         
 
-Here, each column represents a different permutation class (different number of $(\text{d}\omega)$ piece), while each row represents a different dimension. The even terms are not displayed themselves, but instead their coefficients are shown. The coefficients within each cell are presented in decreasing order, with repeated coefficients denoted using powers. The total number of coefficients (including powers) in each cell gives the number of distinct even terms for that dimension and number of $(\text{d}\omega)$ pieces.
+Here, each column represents a different permutation class (different number of $\text{d}\omega$ piece), while each row represents a different dimension. The even terms are not displayed themselves, but instead their coefficients are shown. The coefficients within each cell are presented in decreasing order, with repeated coefficients denoted using powers. The total number of coefficients (including powers) in each cell gives the number of distinct even terms for that dimension and number of $\text{d}\omega$ pieces. For example, in $D=12 with 3 $\text{d}\omega$, the coefficients are given by 6, 6, 6 and 2. Hence the contribution to the Pontryagin density is 
+```math
+6(...) + 6(...) + 6(...) + 2(...),
+```
+
+where the terms in the parenthesis correspond to the elements of the distinct permutation set $P^{(3,3)}_\text{dist}$.
 
 Additionally, in the matrices folder a subfolder for each dimension from "dimMin" up to "dimMax" are created. In each such subfolder separate subsubfolders are generated for each permutation class (classes of different number of $\text{d}\omega$ pieces) with the name format 
 ```math
@@ -138,6 +141,10 @@ During the execution of the code, left null space $K$ of the matrix $M_\text{odd
 The calculation is conducted using the MATLAB built-in function "null". As a second verification step, the code explicitly computes the multiplication $K\times M_\text{odd}$ using the computed $K$ and checks whether the result indeed vanishes or not. If the multiplication does not vanish, "Odd terms do not vanish!" error is added to the warning stack. The matrices mentioned at the end of the "Output" section are saved with "-ERRONEOUS" extension in their names:
 
 ![Screenshot](./images/erroneous_matrix.png)
+
+If logging is enabled, the text 'ERROR' is prefixed to the timestamp at which the error is recorded: 
+
+![Screenshot](./images/log_error.png)
 
 The execution of the code then continues with the next permutation class. Additionally, we expect the multiplication $K\times M_\text{even}\times u_\text{even}$ to yield the contribution of the corresponding permutation class to the Pontryagin density (see equation (3.7) in our paper). In the case where the multiplication does not yield the desired output, "K*M_even$ did not yield Pontryagin!" error is added to the warning stack. Again, the corresponding matrices are saved with "-ERRONEOUS" at the end of their names.
 
