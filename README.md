@@ -41,11 +41,14 @@ pontryagin-calc/
 │    ├── saveMat.m        # Matrix saver
 │    └── toLog.m          # Log keeper
 ├── data_D2to32.zip   # Zip folder containing data generated for D=2 to D=32 dimension
-├── matrices/         # Folder to store the generated matrices
-├── excel_files/      # Folder to store the generated excel files
+├── backup/*          # Folder to store the previously generated outputs
+├── matrices/*        # Folder to store the generated matrices
+├── excel_files/*     # Folder to store the generated excel files
 ├── README.md         # Project documentation
-└── LICENSE           # License file (MIT or other)
+└── LICENSE           # License file (CC v4.0)
 ```
+
+The folders with asterisk are generated at runtime. 
 
 ## Overview
 ### How to Run
@@ -89,7 +92,20 @@ Every two rows give the different total derivative term contributions and their 
   CS_5 = \dfrac{3}{5}\omega^5 + \dfrac{3}{2}(\text{d}\omega)\omega^3 + (\text{d}\omega)^2\omega,
 ```
 
-where the wedge products are suppressed. 
+where the wedge products are suppressed. Another excel file containing the coefficients of the even terms coming from the expansion of the Pontryagin density is created. The format of this file (for $D=2$ to $D=12$) is as follows:
+
+| Dimension | (dω)⁰ | (dω)¹ | (dω)²   | (dω)³   | (dω)⁴     | (dω)⁵     | (dω)⁶   | (dω)⁷   | (dω)⁸ |
+|-----------|-------|-------|---------|---------|-----------|-----------|---------|---------|-------|
+| 2-D       | 1     | 1     |         |         |           |           |         |         |       |
+| 4-D       | 1     | 2     | 1       |         |           |           |         |         |       |
+| 6-D       | 1     | 3     | 3       | 1       |           |           |         |         |       |
+| 8-D       | 1     | 4     | 4 2     | 4       | 1         |           |         |         |       |
+| 10-D      | 1     | 5     | 5²      | 5²      | 5         | 1         |         |         |       |
+| 12-D      | 1     | 6     | 6² 3    | 6³ 2    | 6² 3      | 6         | 1       |         |       |
+| 14-D      | 1     | 7     | 7³      | 7⁵      | 7⁵        | 7³        | 7       | 1       |       |
+| 16-D      | 1     | 8     | 8³ 4    | 8⁷      | 8⁸ 4 2    | 8⁷        | 8³ 4    | 8       | 1     |
+
+Here, each column represents a different permutation class (different number of $(\text{d}\omega)$ piece), while each row represents a different dimension. The even terms are not displayed themselves, but instead their coefficients are shown. The coefficients within each cell are presented in decreasing order, with repeated coefficients denoted using powers. The total number of coefficients (including powers) in each cell gives the number of distinct even terms for that dimension and number of $(\text{d}\omega)$ pieces.
 
 Additionally, in the matrices folder a subfolder for each dimension from "dimMin" up to "dimMax" are created. In each such subfolder separate subsubfolders are generated for each permutation class (classes of different number of $\text{d}\omega$ pieces) with the name format 
 ```math
