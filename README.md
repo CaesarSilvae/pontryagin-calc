@@ -15,11 +15,14 @@ presented in the paper:
 - [Requirements](#Requirements)
 - [Repository Structure](#Repository-Structure)
 - [Overview](#Overview)
-- [How to Run](#How-to-Run)
-- [License](#license)
+  - [How to Run](#How-to-Run)
+  - [Output](#Output)
+  - [Error Handling](#Error-Handling)
+  - [Backup](#Backup)
+- [Function Call Graph](#Function-Call-Graph)
 
 
-## 🛠️ Requirements
+## Requirements
 This code was developed and tested using:
 - **MATLAB** R2023b or later
   
