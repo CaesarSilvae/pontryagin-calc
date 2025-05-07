@@ -19,8 +19,9 @@ presented in the paper:
   - [Output](#Output)
   - [Error Handling](#Error-Handling)
   - [Backup](#Backup)
-- [Function Call Graph](#Function-Call-Graph)
-
+  - [Function Call Graph](#Function-Call-Graph)
+- [Contact](#Contact)
+- [License](#Lisence)
 
 ## Requirements
 This code was developed and tested using:
@@ -207,6 +208,6 @@ In place of moved folders (if any), new empty ones are created in the main path.
 - GitHub: @CaesarSilvae
 
 ## License
-This work is licensed under CC BY 4.0.
+This work is licensed under [CC BY 4.0](./LICENSE).
 
 You are free to use, modify, and distribute it, provided that appropriate credit is given to the original author(s).
