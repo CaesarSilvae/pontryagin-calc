@@ -142,10 +142,10 @@ Each time there is data in either the "matrices" or in the "excel_files" folder,
 Then the folders containing data are moved into this newly generated subfolder:
 ```graphql
 └── backup/
-│  ├── ...
-│  └── DDMMYYYY_HHMMSS/
-│  │  ├── matrices/
-│  │  └── excel_files/
+     ├── ...
+     └── DDMMYYYY_HHMMSS/
+           ├── matrices/
+           └── excel_files/
 ```
 
 In place of moved folders (if any), empty new ones are created in the main path.
