@@ -45,7 +45,7 @@ pontryagin-calc/
 ├── matrices/*        # Folder to store the generated matrices
 ├── excel_files/*     # Folder to store the generated excel files
 ├── README.md         # Project documentation
-└── LICENSE           # License file (MIT or other)
+└── LICENSE           # License file (CC v4.0)
 ```
 
 The folders with asterisk are generated at runtime. 
@@ -92,7 +92,7 @@ Every two rows give the different total derivative term contributions and their 
   CS_5 = \dfrac{3}{5}\omega^5 + \dfrac{3}{2}(\text{d}\omega)\omega^3 + (\text{d}\omega)^2\omega,
 ```
 
-where the wedge products are suppressed. 
+where the wedge products are suppressed. Another excel file containing the coefficients of the even terms coming from the expansion of the Pontryagin density is created.
 
 Additionally, in the matrices folder a subfolder for each dimension from "dimMin" up to "dimMax" are created. In each such subfolder separate subsubfolders are generated for each permutation class (classes of different number of $\text{d}\omega$ pieces) with the name format 
 ```math
