@@ -11,10 +11,10 @@ params.warnings = {};
 %% INPUTS
 % maximum dimension (must be an even number)
 dimMin = 2;
-dimMax = 16;
+dimMax = 20;
 
 % global flags 
-enableLog = 1;         % flag to enable log keeping
+enableLog = 0;         % flag to enable log keeping
 enableMatrixWrite = 1; % flag to enable errorenous matrix in
                        % log file (enableLog must be raised first)
 
@@ -176,7 +176,7 @@ clearvars -except params nMax dimArr dimMin dimMax
 for dim = dimArr
     % subfolder path
     dimPath = fullfile(params.paths.matricesPath, ...
-        ['D-' num2str(dim)]);
+        ['D' num2str(dim)]);
 
     % create if non-existent
     if ~exist(dimPath,'dir')
@@ -202,7 +202,7 @@ end
 % initiate table to store permutation 
 rowNames = cell([1,nMax]);
 for row = 1:nMax
-    rowNames{row} = [num2str(2*row) '-D'];
+    rowNames{row} = ['D' num2str(2*row)];
 end
 
 varNames = cell([1,nMax+1]);
@@ -232,9 +232,9 @@ for dim = dimArr
 
     % display dim started message
     % disp(totDerivStr);
-    disp(['Calculation of D-' num2str(dim) ...
+    disp(['Calculation of D' num2str(dim)...
         ' started!'])
-    toLog(params,0,['Calculation of D-' num2str(dim) ...
+    toLog(params,0,['Calculation of D' num2str(dim) ...
         ' started!'])
 
     % start clock to find run time for D=dim 
@@ -268,7 +268,7 @@ for dim = dimArr
 
     % reset excel column counter to 2
     colCtExcel = 2;
-    writematrix("D-" + string(dim),totDerivExcelPath, ...
+    writematrix(string(dim) + "D",totDerivExcelPath, ...
         'Range',['A' num2str(rowCtExcel)]);
 
     % compute total derivative term
@@ -329,9 +329,9 @@ for dim = dimArr
     % display dim complete message
     % disp(totDerivStr);
     elapsedTime = toc(clk);
-    disp(['Calculation of D-' num2str(dim) ...
+    disp(['Calculation of D' num2str(dim) ...
         ' is complete in ' num2str(elapsedTime) '!'])
-    toLog(params,0,['Calculation of D-' num2str(dim) ...
+    toLog(params,0,['Calculation of D' num2str(dim) ...
         ' is complete in ' num2str(elapsedTime) '!'])
 
     % add elapsed time to corresponding array
@@ -343,7 +343,7 @@ for dim = dimArr
     % display warnings if any
     if ~isempty(params.warnings)
         msg = strjoin(params.warnings,'\n');
-        warndlg(sprintf(msg),['D-' num2str(dim) ' errors:']);
+        warndlg(sprintf(msg),['D' num2str(dim) ' errors:']);
     end
 end
 
@@ -351,6 +351,9 @@ end
             % command window
 writetable(tab,fullfile(params.paths.excelPath,'coeffExcel.xlsx'),...
     'WriteRowNames',true);
+
+% close all files 
+fclose('all');
 
 % write to log file 
 toLog(params,-2);
