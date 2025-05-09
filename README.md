@@ -92,15 +92,15 @@ Any missing folder will be reproduced by the code at the beginning of the run. U
 
 The main output of the code is "totDerivExcel.xlsx" file which contains the total derivative contributions from each permutations class and the associated coefficients for the desired dimensions as a table. The format of the file is given below for dimensions from $D=2$ to $D=8$:
 
-| $D-2$ | $\omega$   |                            |                              |                                                  |                            |
-|-------|------------|----------------------------|------------------------------|--------------------------------------------------|----------------------------|
-|       | 1          |                            |                              |                                                  |                            |
-| $D-4$ | $\omega^3$ | $(\text{d}\omega)\omega$ |                              |                                                  |                            |
-|       | 2/3        | 1                          |                              |                                                  |                            |
-| $D-6$ | $\omega^5$ | $(\text{d}\omega)\omega^3$ | $(\text{d}\omega)^2\omega$   |                                                  |                            |
-|       | 3/5        | 3/2                        | 1                            |                                                  |                            |
-| $D-8$ | $\omega^7$ | $(\text{d}\omega)\omega^7$ | $(\text{d}\omega)^2\omega^3$ | $(\text{d}\omega)\omega(\text{d}\omega)\omega^2$ | $(\text{d}\omega)^3\omega$ |
-|       | 4/7        | 2                          | 8/5                          | 4/5                                              | 1                          |
+| $D2$ | $\omega$   |                            |                              |                                                  |                            |
+|------|------------|----------------------------|------------------------------|--------------------------------------------------|----------------------------|
+|      | 1          |                            |                              |                                                  |                            |
+| $D4$ | $\omega^3$ | $(\text{d}\omega)\omega$ |                              |                                                  |                            |
+|      | 2/3        | 1                          |                              |                                                  |                            |
+| $D6$ | $\omega^5$ | $(\text{d}\omega)\omega^3$ | $(\text{d}\omega)^2\omega$   |                                                  |                            |
+|      | 3/5        | 3/2                        | 1                            |                                                  |                            |
+| $D8$ | $\omega^7$ | $(\text{d}\omega)\omega^7$ | $(\text{d}\omega)^2\omega^3$ | $(\text{d}\omega)\omega(\text{d}\omega)\omega^2$ | $(\text{d}\omega)^3\omega$ |
+|      | 4/7        | 2                          | 8/5                          | 4/5                                              | 1                          |
 
 Every two rows give the different total derivative term contributions and their coefficients, respectively. To read off the Chern-Simons-like potential for a given dimension, one needs to add up all the contributions in the upper row multiplied by the coefficients below them. For instance, in $D=6$ the potential term is given by the elements of the fifth row multiplied by the sixth row summed up:
 ```math
@@ -109,14 +109,14 @@ Every two rows give the different total derivative term contributions and their 
 
 where the wedge products are suppressed. Another excel file named "coeffExcel.xlsx", containing the coefficients of the even terms coming from the expansion of the Pontryagin density is created. The format of this file (for $D=2$ to $D=12$) is as follows:
 
-| Dimension | (dω)⁰ | (dω)¹ | (dω)²   | (dω)³   | (dω)⁴     | (dω)⁵     | (dω)⁶   |
-|-----------|-------|-------|---------|---------|-----------|-----------|---------|
-| 2-D       | 1     | 1     |         |         |           |           |         |       
-| 4-D       | 1     | 2     | 1       |         |           |           |         |       
-| 6-D       | 1     | 3     | 3       | 1       |           |           |         |        
-| 8-D       | 1     | 4     | 4 2     | 4       | 1         |           |         |         
-| 10-D      | 1     | 5     | 5²      | 5²      | 5         | 1         |         |         
-| 12-D      | 1     | 6     | 6² 3    | 6³ 2    | 6² 3      | 6         | 1       |         
+| Dimension| (dω)⁰ | (dω)¹ | (dω)²   | (dω)³   | (dω)⁴     | (dω)⁵     | (dω)⁶   |
+|----------|-------|-------|---------|---------|-----------|-----------|---------|
+| 2D       | 1     | 1     |         |         |           |           |         |       
+| 4D       | 1     | 2     | 1       |         |           |           |         |       
+| 6D       | 1     | 3     | 3       | 1       |           |           |         |        
+| 8D       | 1     | 4     | 4 2     | 4       | 1         |           |         |         
+| 10D      | 1     | 5     | 5²      | 5²      | 5         | 1         |         |         
+| 12D      | 1     | 6     | 6² 3    | 6³ 2    | 6² 3      | 6         | 1       |         
 
 Here, each column represents a different permutation class (different number of $\text{d}\omega$ piece), while each row represents a different dimension. The even terms are not displayed themselves, but instead their coefficients are shown. The coefficients within each cell are presented in decreasing order, with repeated coefficients denoted using powers. The total number of coefficients (including powers) in each cell gives the number of distinct even terms for that dimension and number of $\text{d}\omega$ pieces. For example, in $D=12$ with 3 $\text{d}\omega$s, the coefficients are given by 6, 6, 6 and 2. Hence the contribution to the Pontryagin density is 
 ```math
