@@ -118,7 +118,7 @@ where the wedge products are suppressed. Another excel file named "coeffExcel.xl
 | 10-D      | 1     | 5     | 5²      | 5²      | 5         | 1         |         |         
 | 12-D      | 1     | 6     | 6² 3    | 6³ 2    | 6² 3      | 6         | 1       |         
 
-Here, each column represents a different permutation class (different number of $\text{d}\omega$ piece), while each row represents a different dimension. The even terms are not displayed themselves, but instead their coefficients are shown. The coefficients within each cell are presented in decreasing order, with repeated coefficients denoted using powers. The total number of coefficients (including powers) in each cell gives the number of distinct even terms for that dimension and number of $\text{d}\omega$ pieces. For example, in $D=12 with 3 $\text{d}\omega$, the coefficients are given by 6, 6, 6 and 2. Hence the contribution to the Pontryagin density is 
+Here, each column represents a different permutation class (different number of $\text{d}\omega$ piece), while each row represents a different dimension. The even terms are not displayed themselves, but instead their coefficients are shown. The coefficients within each cell are presented in decreasing order, with repeated coefficients denoted using powers. The total number of coefficients (including powers) in each cell gives the number of distinct even terms for that dimension and number of $\text{d}\omega$ pieces. For example, in $D=12$ with 3 $\text{d}\omega$, the coefficients are given by 6, 6, 6 and 2. Hence the contribution to the Pontryagin density is 
 ```math
 6(...) + 6(...) + 6(...) + 2(...),
 ```
