@@ -11,7 +11,7 @@ params.warnings = {};
 %% INPUTS
 % maximum dimension (must be an even number)
 dimMin = 2;
-dimMax = 16;
+dimMax = 32;
 
 % global flags 
 enableLog = 1;         % flag to enable log keeping
