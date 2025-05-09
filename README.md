@@ -123,7 +123,7 @@ Here, each column represents a different permutation class (different number of 
 6(...) + 6(...) + 6(...) + 2(...),
 ```
 
-where the terms in the parenthesis correspond to the elements of the distinct permutation set $P^{(3,3)}_\text{dist}$.
+where the terms in the parenthesis correspond to the elements of the distinct permutation set $S^{(3,3)}_\text{dist}$.
 
 Additionally, in the matrices folder a subfolder for each dimension from "dimMin" up to "dimMax" are created. In each such subfolder separate subsubfolders are generated for each permutation class (classes of different number of $\text{d}\omega$ pieces) with the name format 
 ```math
