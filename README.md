@@ -102,7 +102,7 @@ The main output of the code is "totDerivExcel.xlsx" file which contains the tota
 | $D8$ | $\omega^7$ | $(\text{d}\omega)\omega^7$ | $(\text{d}\omega)^2\omega^3$ | $(\text{d}\omega)\omega(\text{d}\omega)\omega^2$ | $(\text{d}\omega)^3\omega$ |
 |      | 4/7        | 2                          | 8/5                          | 4/5                                              | 1                          |
 
-Every two rows give the different total derivative term contributions and their coefficients, respectively. To read off the Chern-Simons-like potential for a given dimension, one needs to add up all the contributions in the upper row multiplied by the coefficients below them. For instance, in $D=6$ the potential term is given by the elements of the fifth row multiplied by the sixth row summed up:
+Every two rows give the different total derivative term contributions and their coefficients, respectively. To read off the Chern-Simons potential for a given dimension, one needs to add up all the contributions in the upper row multiplied by the coefficients below them. For instance, in $D=6$ the potential term is given by the elements of the fifth row multiplied by the sixth row summed up:
 ```math
   CS_5 = \dfrac{3}{5}\omega^5 + \dfrac{3}{2}(\text{d}\omega)\omega^3 + (\text{d}\omega)^2\omega,
 ```
