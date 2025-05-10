@@ -10,7 +10,7 @@ presented in the paper:
 > **Authors:** Onur Ayberk Çakmak, Özgür Sarıoğlu<br>
 > **arXiv:** [](https://arxiv.org/)
 
-The output generated for dimensions from $D=2$ up to $D=32$ is contained in the zipped [data_D2to32.zip](./data_D2to32.zip) folder.
+The output generated for dimensions from $D=4$ up to $D=32$ is contained in the zipped [data_D2to32.zip](./data_D2to32.zip) folder.
 
 ## Table of Contents
 
