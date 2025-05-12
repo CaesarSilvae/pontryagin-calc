@@ -10,7 +10,7 @@ presented in the paper:
 > **Authors:** Onur Ayberk Çakmak, Özgür Sarıoğlu<br>
 > **arXiv:** [](https://arxiv.org/)
 
-The output generated for dimensions from $D=2$ up to $D=32$ is contained in the zipped [data_D2to32.zip](./data_D2to32.zip) folder.
+The output generated for dimensions from $D=4$ up to $D=32$ is contained in the zipped [data_D2to32.zip](./data_D2to32.zip) folder.
 
 ## Table of Contents
 
@@ -90,11 +90,8 @@ The code first checks whether the folders in which the output files will be stor
 
 Any missing folder will be reproduced by the code at the beginning of the run. Upon execution, if the output data folders already exist and contain output files from previous execution, a backup subfolder is generated under the "backup" folder (See "Backup" section). 
 
-The main output of the code is "totDerivExcel.xlsx" file which contains the total derivative contributions from each permutations class and the associated coefficients for the desired dimensions as a table. The format of the file is given below for dimensions from $D=2$ to $D=8$:
+The main output of the code is "totDerivExcel.xlsx" file which contains the total derivative contributions from each permutations class and the associated coefficients for the desired dimensions as a table. The format of the file is given below for dimensions from $D=4$ to $D=8$:
 
-| $D2$ | $\omega$   |                            |                              |                                                  |                            |
-|------|------------|----------------------------|------------------------------|--------------------------------------------------|----------------------------|
-|      | 1          |                            |                              |                                                  |                            |
 | $D4$ | $\omega^3$ | $(\text{d}\omega)\omega$ |                              |                                                  |                            |
 |      | 2/3        | 1                          |                              |                                                  |                            |
 | $D6$ | $\omega^5$ | $(\text{d}\omega)\omega^3$ | $(\text{d}\omega)^2\omega$   |                                                  |                            |
@@ -107,11 +104,10 @@ Every two rows give the different total derivative term contributions and their 
   CS_5 = \dfrac{3}{5}\omega^5 + \dfrac{3}{2}(\text{d}\omega)\omega^3 + (\text{d}\omega)^2\omega,
 ```
 
-where the wedge products are suppressed. Another excel file named "coeffExcel.xlsx", containing the coefficients of the even terms coming from the expansion of the Pontryagin density is created. The format of this file (for $D=2$ to $D=12$) is as follows:
+where the wedge products are suppressed. Another excel file named "coeffExcel.xlsx", containing the coefficients of the even terms coming from the expansion of the Pontryagin density is created. The format of this file (for $D=4$ to $D=12$) is as follows:
 
 | Dimension| (dω)⁰ | (dω)¹ | (dω)²   | (dω)³   | (dω)⁴     | (dω)⁵     | (dω)⁶   |
-|----------|-------|-------|---------|---------|-----------|-----------|---------|
-| 2D       | 1     | 1     |         |         |           |           |         |       
+|----------|-------|-------|---------|---------|-----------|-----------|---------|      
 | 4D       | 1     | 2     | 1       |         |           |           |         |       
 | 6D       | 1     | 3     | 3       | 1       |           |           |         |        
 | 8D       | 1     | 4     | 4 2     | 4       | 1         |           |         |         
