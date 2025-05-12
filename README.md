@@ -92,7 +92,7 @@ Any missing folder will be reproduced by the code at the beginning of the run. U
 
 The main output of the code is "totDerivExcel.xlsx" file which contains the total derivative contributions from each permutations class and the associated coefficients for the desired dimensions as a table. The format of the file is given below for dimensions from $D=4$ to $D=8$:
 
-| $D$ | |   |                              |                                                  |                            |
+| Dimension | |   |                              |                                                  |                            |
 |------|------------|----------------------------|------------------------------|--------------------------------------------------|----------------------------|
 | $4$ | $\omega^3$ | $(\text{d}\omega)\omega$   |                              |                                                  |                            |
 |      | 2/3        | 1                          |                              |                                                  |                            |
