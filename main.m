@@ -51,6 +51,11 @@ params.misc.tolerance = tolerance;
 % n = D/2
 nMax = dimMax/2;
 
+% if dimMin <= 2, throw error 
+if dimMin <= 2
+  error('Minimum dimension should be greater than 2!')
+end 
+
 % if both dimMin and dimMax are not even
 % throw error
 if mod(dimMin,2) == 1 || mod(dimMax,2) == 1
