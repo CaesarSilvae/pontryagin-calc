@@ -8,7 +8,7 @@ presented in the paper:
 
 > **Title:** *Chern-Simons potentials of higher-dimensional Pontryagin densities*<br>
 > **Authors:** Onur Ayberk Çakmak, Özgür Sarıoğlu<br>
-> **arXiv:** [](https://arxiv.org/)
+> **arXiv:** [2505.07461 (math-ph)](https://arxiv.org/abs/2505.07461)
 
 The output generated for dimensions from $D=4$ up to $D=32$ is contained in the zipped [data_D4to32.zip](./data_D4to32.zip) folder.
 
