@@ -10,7 +10,7 @@ params.warnings = {};
 
 %% INPUTS
 % maximum dimension (must be an even number)
-dimMin = 2;
+dimMin = 4;
 dimMax = 20;
 
 % global flags 
