@@ -2,7 +2,7 @@
 
 This repository contains the MATLAB code used in the calculation of Cherns-Simons-like potentials from gravitational Pontryagin densities in higher even dimensions
 ```math
-ch_n(R) = \text{Tr}(R\wedge)^n,
+ch_n(R) = \text{Tr}(R^n),
 ```
 presented in the paper:
 
