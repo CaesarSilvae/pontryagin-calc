@@ -9,8 +9,8 @@ params.misc = struct();
 params.warnings = {};
 
 %% INPUTS
-% maximum dimension (must be an even number)
-dimMin = 4;
+% maximum and minimum dimensions (must be an even number)
+dimMin = 2;
 dimMax = 20;
 
 % global flags 
@@ -56,7 +56,7 @@ if dimMin <= 2
   error('Minimum dimension should be greater than 2!')
 end 
 
-% if both dimMin and dimMax are not even
+% if either dimMin or dimMax is not even
 % throw error
 if mod(dimMin,2) == 1 || mod(dimMax,2) == 1
     error('Dimensions must be even integers!')
