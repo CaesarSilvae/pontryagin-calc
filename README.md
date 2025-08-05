@@ -1,10 +1,10 @@
 # MATLAB Code for "Chern-Simons potentials of higher-dimensional Pontryagin densities"
 
-This repository contains the MATLAB code used in the calculation of Cherns-Simons-like potentials from gravitational Pontryagin densities in higher even dimensions
+This repository contains the MATLAB code used in the calculation of Cherns-Simons potentials of Chern numbers in $D=2n$ dimensions
 ```math
 ch_n(R) = \text{Tr}(R^n),
 ```
-presented in the paper:
+as presented in the paper:
 
 > **Title:** *Chern-Simons potentials of higher-dimensional Pontryagin densities*<br>
 > **Authors:** Onur Ayberk Çakmak, Özgür Sarıoğlu<br>
